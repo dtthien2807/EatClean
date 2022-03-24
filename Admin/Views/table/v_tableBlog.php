@@ -84,7 +84,7 @@ include ("Models/m_blog.php");
                                     <a class="btn bg-info" href="updateBlog.php?id=<?php echo $blog->id;?>" title="Edit"">
                                         <i class=" far fa-edit "></i>
                                     </a>
-                                    <a class="btn bg-danger " href=" ">
+                                    <a class="btn bg-danger" href="javascript:question_confirm_Blog(<?php echo $blog->id;?>)" title="Delete">
                                         <i class=" fas fa-trash" ></i>
                                     </a>
                                 </td>

@@ -63,5 +63,22 @@ class c_addBlog{
         $view = "Views/table/v_updateBlog.php";
         include ("Template/layout.php");
     }
+    public function deleteBlog()
+    {
+        if(isset($_GET['id']))
+        {
+            $id = $_GET['id'];
+            $m_blog = new m_blog();
+            $kq = $m_blog->delete_blog($id);
+            if($kq)
+            {
+                echo "<script>alert('Xóa thành công !');window.location='tableBlog.php'</script>";
+            }
+            else
+            {
+                echo "<script>alert('Không Thành công!')</script>";
+            }
+        }
+    }
 }
 ?>

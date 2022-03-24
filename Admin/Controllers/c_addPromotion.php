@@ -47,5 +47,21 @@ class c_addPromotion{
         $view = "Views/table/v_updatePromotion.php";
         include ("Template/layout.php");
     }
+    public function deletePromotion()
+    {
+        if(isset($_GET['id']))
+        {
+            $id = $_GET['id'];
+            $m_promotion = new m_promotion();
+            $kq = $m_promotion->delete_promotion($id);
+            if($kq)
+            {
+                echo "<script>alert('Xóa thành công !');window.location='tablePromotion.php'</script>";
+            }
+            else{
+                echo "<script>alert('Không Thành công!')</script>";
+            }
+        }
+    }
 }
 ?>

@@ -67,5 +67,21 @@ class c_addProduct{
         $view = "Views/table/v_updateProduct.php";
         include ("Template/layout.php");
     }
+    public function deleteProduct()
+    {
+        if(isset($_GET['id']))
+        {
+            $id = $_GET['id'];
+            $m_product = new m_product();
+            $kq = $m_product->delete_product($id);
+            if($kq)
+            {
+                echo "<script>alert('Xóa thành công !');window.location='tableProduct.php'</script>";
+            }
+            else{
+                echo "<script>alert('Xóa không thành công!')</script>";
+            }
+        }
+    }
 }
 ?>

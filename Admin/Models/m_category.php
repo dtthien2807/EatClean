@@ -24,6 +24,11 @@ class m_category extends database{
         $this->setQuery($sql);
         return $this->execute(array($name_categoryProduct, $status, $id));
     }
-
+    public function delete_category($id)
+    {
+        $sql ="delete from tbl_categoryproduct where id = ?";
+        $this->setQuery($sql);
+        return $this->execute(array($id));
+    }
 }
 ?>

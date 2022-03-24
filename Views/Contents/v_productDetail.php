@@ -19,18 +19,18 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="product-desc-img">
-                    <img id="zoom-01" src="Public/images/shop/product-01.jpg" class="img-responsive" alt="product-desc-1" data-zoom-image="Public/images/shop/product-full-01.jpg">
+                    <img id="zoom-01" src="Admin/Public/myImage/<?php echo $detail_product->image;?>" class="img-responsive" alt="product-desc-1" data-zoom-image="Admin/Public/myImage/<?php echo $detail_product->image;?>">
                 </div>
                 <div id="gallery-01" class="product-gallery">
                     <div id="product-gallery-slider" class="product-gallery-slider">
                         <div class="item product-gallery-thumb active">
-                            <a href="#" data-image="Public/images/shop/product-01.jpg" data-zoom-image="Public/images/shop/product-full-01.jpg"><img src="Public/images/shop/product-thumb-01.jpg" class="img-responsive" alt="product-thumb-1"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
+                            <a href="#" data-image="Admin/Public/myImage/<?php echo $detail_product->image;?>" data-zoom-image="Admin/Public/myImage/<?php echo $detail_product->image;?>"><img src="Admin/Public/myImage/<?php echo $detail_product->image;?>" class="img-responsive" alt="product-thumb-1"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
                         </div>
                         <div class="item product-gallery-thumb">
                             <a href="#" data-image="Public/images/shop/product-02.jpg" data-zoom-image="Public/images/shop/product-full-02.jpg"><img src="Public/images/shop/product-thumb-02.jpg" class="img-responsive" alt="product-thumb-2"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
                         </div>
                         <div class="item product-gallery-thumb">
-                            <a href="#" data-image="Public/images/shop/product-01.jpg" data-zoom-image="Public/images/shop/product-full-01.jpg"><img src="Public/images/shop/product-thumb-03.jpg" class="img-responsive" alt="product-thumb-3"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
+                            <a href="#" data-image="Admin/Public/myImage/<?php echo $detail_product->image;?>" data-zoom-image="Admin/Public/myImage/<?php echo $detail_product->image;?>"><img src="Admin/Public/myImage/<?php echo $detail_product->image;?>" class="img-responsive" alt="product-thumb-3"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
                         </div>
                         <div class="item product-gallery-thumb">
                             <a href="#" data-image="Public/images/shop/product-02.jpg" data-zoom-image="Public/images/shop/product-full-02.jpg"><img src="Public/images/shop/product-thumb-04.jpg" class="img-responsive" alt="product-thumb-4"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
@@ -40,8 +40,8 @@
             </div>
             <div class="col-sm-6">
                 <div class="product-page-dtl-block">
-                    <h5 class="product-dtl-name">Your Product Name</h5>
-                    <div class="product-dtl-price"><span>$20.00</span> $12.00</div>
+                    <h5 class="product-dtl-name"><?php echo $detail_product->product;?></h5>
+                    <div class="product-dtl-price"><?php echo number_format($detail_product->price);?></div>
                     <div class="product-dtl-rating-block">
                         <div class="shop-products-rating">
                             <ul>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="product-desc">
-                        <p><br>Verear timeam qui ut, ut mei mazim voluptaria disputationi. Ea labore epicuri contentiones nec, has an nostro qualisque percipitur. Nam persius commune officiis ne, ei modus ign<br><a href="#" title="Read More">Read more...</a></p>
+                        <p><br><?php echo $detail_product->description;?><br><a href="#" title="Read More">Read more...</a></p>
                     </div>
                     <div class="purchase-features-main-block">
                         <div class="row">
@@ -152,17 +152,17 @@
                     <div class="product-info">
                         <ul>
                             <li><span><i class="fa fa-table"></i> Sku: </span>#ABC456-123-M</li>
-                            <li><span><i class="fa fa-clock-o"></i> Expiry Date: </span>01/0/2016</li>
-                            <li><span><i class="fa fa-pencil-square"></i> Categories: </span>Vegetable</li>
+                            <li><span><i class="fa fa-clock-o"></i> Expiry Date: </span><?php echo $detail_product->date_create;?></li>
+                            <li><span><i class="fa fa-pencil-square"></i> Categories: </span><?php $m_shop= new m_shop(); $namecategory = $m_shop->read_category_by_id($detail_product->id_categoryProduct);
+                                echo $namecategory->name_categoryProduct;
+                                ?></li>
                             <li><span><i class="fa fa-bookmark"></i> Tags: </span><a href="#" title="Carbohydrates">Carbohydrates, </a><a href="#">Fats, </a><a href="#" title="Minerals">Minerals, </a><a href="#" title="Water">Water, </a><a href="#">Nutrition, </a><a href="#" title="Manufacture">Manufacture, </a><a href="#" title="Food">Food</a></li>
                             <li><span class="share-block"><i class="fa fa-share-alt"></i> Share: </span></li>
                             <li class="social-icon">
                                 <ul>
                                     <li><a href="#" title="Facebook"><i class="fa fa-facebook-square"></i></a></li>
                                     <li><a href="#" title="Twitter"><i class="fa fa-twitter-square"></i></a></li>
-                                    <li><a href="#" title="Pinterest"><i class="fa fa-pinterest-square"></i></a></li>
                                     <li><a href="#" title="Google Plus"><i class="fa fa-google-plus-square"></i></a></li>
-                                    <li><a href="#" title="Behance"><i class="fa fa-behance-square"></i></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -173,14 +173,15 @@
         <div class="product-dtl-tab">
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
-                <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews (2)</a></li>
-                <li role="presentation"><a href="#use" aria-controls="use" role="tab" data-toggle="tab">How to eat</a></li>
+                <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews (<?php $m_shop= new m_shop();
+                $rs = $m_shop->count_review($detail_product->id);
+                echo $rs->SL;
+                ?>)</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="description">
-                    <p>Uniquely transform out-of-the-box human capital before client-centered mindshare. Dynamically implement professional platforms and an expanded array of testing procedures. Objectively benchmark high-payoff results for cross-unit mindshare.</p>
-                    <p>Uniquely transform out-of-the-box human capital before client-centered mindshare. Dynamically implement professional platforms and an expanded array of testing procedures. Objectively benchmark high-payoff results for cross-unit mindshare.</p>
+                    <p><?php echo $detail_product->detail_description;?></p>
                     <ul>
                         <li>High Quality Products</li>
                         <li>6 Months Life</li>
@@ -191,6 +192,11 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="reviews">
                     <div class="blog-comment">
+                        <?php
+                        $m_shop= new m_shop();
+                        $read_review=$m_shop->read_review_by_id($detail_product->id);
+                        foreach ($read_review as $rv){
+                        ?>
                         <div class="row">
                             <div class="col-xs-10">
                                 <div class="media">
@@ -199,7 +205,7 @@
                                     </div>
                                     <div class="media-body">
                                         <div class="media-heading-block">
-                                            <h6 class="media-heading">Johnathan Doe - <span>posted 2 minutes ago</span></h6>
+                                            <h6 class="media-heading"><?php echo $rv->name_user;?>- <span><?php echo $rv->date_review;?></span></h6>
                                             <div class="shop-products-rating">
                                                 <ul>
                                                     <li><i class="fa fa-star"></i></li>
@@ -210,41 +216,15 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <p>Ad sumo admodum tincidunt cum. Mei et ullum lobortis, virtute accusamus pertinacia ne vim. At summo aliquando ius. Sea ad munere nullam admodum. Quo legere vivendo pericula et, ea aliquam placerat ullamcorper mei. Vide tractatos ei eos. Duo dicta commune intellegam cu, cu eum partem omnesque prodesset. Mea eripuit voluptatum in. Congue aperiam maiestatis et mea, nih</p>
-                                        <div class="media comments-reply">
-                                            <div class="media-left">
-                                                <a href="#"><img src="Public/images/shop/review-02.jpg" class="media-object" alt="comment-client-02"></a>
-                                            </div>
-                                            <div class="media-body">
-                                                <div class="media-heading-block">
-                                                    <h6 class="media-heading">Susan Muscluas - <span>posted 3 hours ago</span></h6>
-                                                    <div class="shop-products-rating">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star-half-o"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <p>Ad sumo admodum tincidunt cum. Mei et ullum lobortis, virtute accusamus pertinacia ne vim. At summo aliquando ius. Sea ad munere nullam admodum. Quo legere vivendo pericula et, ea aliquam placerat ullamcorper mei. Vide tractatos ei eos. Duo dicta commune intellegam cu, cu eum partem omnesque prodesset. Mea eripuit voluptatum in. Congue aperiam maiestatis et mea, nihil</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                <div class="media-reply-block">
-                                    <div class="media-reply">
-                                        <a href="#" title="Reply"><i class="fa fa-mail-forward"></i> Reply</a>
-                                    </div>
-                                    <div class="media-reply">
-                                        <a href="#" title="Reply"><i class="fa fa-mail-forward"></i> Reply</a>
+                                        <p><?php echo $rv->content;?></p>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                     <div class="blog-comment-send">
                         <h5 class="comments-heading">Post a review</h5>
@@ -274,10 +254,7 @@
                         </form>
                     </div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="use">
-                    <p>Uniquely transform out-of-the-box human capital before client-centered mindshare. Dynamically implement professional platforms and an expanded array of testing procedures. Objectively benchmark high-payoff results for cross-unit mindshare. </p>
-                    <p>Uniquely transform out-of-the-box human capital before client-centered mindshare. Dynamically implement professional platforms and an expanded array of testing procedures. Objectively benchmark high-payoff results for cross-unit mindshare. </p>
-                </div>
+
             </div>
         </div>
     </div>
@@ -285,13 +262,17 @@
         <div class="shop-products-main-block">
             <h2 class="related-products-heading text-center">Related Products</h2>
             <div id="product-dtl-slider" class="product-dtl-slider">
+                <?php
+                $s = new m_shop();
+                $shopp=$s->read_shop();
+                foreach ($shopp as $key => $value){ ?>
                 <div class="item shop-products-block">
                     <div class="shop-products-img">
-                        <a href="product-detail.php" title="Onions"><img src="Public/images/shop/product-06.png" class="img-responsive" alt="Product"></a>
+                        <a href="product-detail.php?id=<?php echo $value->id;?>" title="<?php echo $value->product; ?>"><img src="Admin/Public/myImage/<?php echo $value->image;?>" class="img-responsive" alt="Product"></a>
                     </div>
                     <div class="shop-products-dtl-main">
                         <div class="shop-products-dtl">
-                            <h5 class="shop-products-name"><a href="product-detail.php" title="Onions">Onions</a></h5>
+                            <h5 class="shop-products-name"><a href="product-detail.php?id=<?php echo $value->id;?>" title="<?php echo $value->product; ?>"><?php echo $value->product; ?></a></h5>
                             <div class="shop-products-rating">
                                 <ul>
                                     <li><i class="fa fa-star active"></i></li>
@@ -301,7 +282,7 @@
                                     <li><i class="fa fa-star active"></i></li>
                                 </ul>
                             </div>
-                            <div class="shop-products-price"><span>$85.00</span> $83.00</div>
+                            <div class="shop-products-price"><?php echo number_format($value->price); ?></div>
                         </div>
                         <div class="shop-products-footer">
                             <div class="row">
@@ -309,164 +290,15 @@
                                     <a href="cart.php" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
                                 </div>
                                 <div class="col-xs-6">
-                                    <a href="product-detail.php" title="View Detail"><i class="fa fa-file-text-o"></i> View detail</a>
+                                    <a href="product-detail.php?id=<?php echo $value->id;?>" title="View Detail"><i class="fa fa-file-text-o"></i> View detail</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item shop-products-block">
-                    <div class="shop-products-img">
-                        <a href="product-detail.php" title="Grapes"><img src="Public/images/shop/product-01.png" class="img-responsive" alt="Product"></a>
-                    </div>
-                    <div class="shop-products-dtl-main">
-                        <div class="shop-products-dtl">
-                            <h5 class="shop-products-name"><a href="product-detail.php" title="Grapes">Grapes</a></h5>
-                            <div class="shop-products-rating">
-                                <ul>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                </ul>
-                            </div>
-                            <div class="shop-products-price"><span>$57.00</span> $40.00</div>
-                        </div>
-                        <div class="shop-products-footer">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <a href="cart.php" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
-                                </div>
-                                <div class="col-xs-6">
-                                    <a href="product-detail.php" title="View Detail"><i class="fa fa-file-text-o"></i> View detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item shop-products-block">
-                    <div class="shop-products-img">
-                        <a href="product-detail.php" title="Eggplant"><img src="Public/images/shop/product-02.png" class="img-responsive" alt="Product"></a>
-                    </div>
-                    <div class="shop-products-dtl-main">
-                        <div class="shop-products-dtl">
-                            <h5 class="shop-products-name"><a href="product-detail.php" title="Eggplant">Eggplant</a></h5>
-                            <div class="promo-text">Hot</div>
-                            <div class="shop-products-rating">
-                                <ul>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="shop-products-price"><span>$55.00</span> $45.00</div>
-                        </div>
-                        <div class="shop-products-footer">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <a href="cart.php" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
-                                </div>
-                                <div class="col-xs-6">
-                                    <a href="product-detail.php" title="View Detail"><i class="fa fa-file-text-o"></i> View detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item shop-products-block">
-                    <div class="shop-products-img">
-                        <a href="product-detail.php" title="Cucumber"><img src="Public/images/shop/product-03.png" class="img-responsive" alt="Product"></a>
-                    </div>
-                    <div class="shop-products-dtl-main">
-                        <div class="shop-products-dtl">
-                            <h5 class="shop-products-name"><a href="product-detail.php" title="Cucumber">Cucumber</a></h5>
-                            <div class="shop-products-rating">
-                                <ul>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="shop-products-price"><span>$45.00</span> $37.00</div>
-                        </div>
-                        <div class="shop-products-footer">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <a href="#" title="add to cart button"><i class="fa fa-shopping-basket"></i> Add to cart</a>
-                                </div>
-                                <div class="col-xs-6 hidden-xs">
-                                    <a href="#" title="view detail button"><i class="fa fa-file-text-o"></i> View detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item shop-products-block">
-                    <div class="shop-products-img">
-                        <a href="product-detail.php" title="Capsicum"><img src="Public/images/shop/product-04.png" class="img-responsive" alt="Product"></a>
-                    </div>
-                    <div class="shop-products-dtl-main">
-                        <div class="shop-products-dtl">
-                            <h5 class="shop-products-name"><a href="product-detail.php" title="Capsicum">Capsicum</a></h5>
-                            <div class="promo-text green-bg">Sale</div>
-                            <div class="shop-products-rating">
-                                <ul>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                </ul>
-                            </div>
-                            <div class="shop-products-price"><span>$57.00</span> $42.00</div>
-                        </div>
-                        <div class="shop-products-footer">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <a href="#" title="products rating"><i class="fa fa-shopping-basket"></i> Add to cart</a>
-                                </div>
-                                <div class="col-xs-6">
-                                    <a href="product-detail.php" title="View Detail"><i class="fa fa-file-text-o"></i> View detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item shop-products-block">
-                    <div class="shop-products-img">
-                        <a href="product-detail.php" title="Green Cabbage"><img src="Public/images/shop/product-08.png" class="img-responsive" alt="Product"></a>
-                    </div>
-                    <div class="shop-products-dtl-main">
-                        <div class="shop-products-dtl">
-                            <h5 class="shop-products-name"><a href="product-detail.php" title="Green Cabbage">Green Cabbage</a></h5>
-                            <div class="shop-products-rating">
-                                <ul>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star active"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="shop-products-price"><span>$55.00</span> $45.00</div>
-                        </div>
-                        <div class="shop-products-footer">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <a href="cart.php" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
-                                </div>
-                                <div class="col-xs-6">
-                                    <a href="product-detail.php" title="View Detail"><i class="fa fa-file-text-o"></i> View detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>

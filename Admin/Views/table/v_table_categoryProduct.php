@@ -71,7 +71,7 @@ include ("Models/m_category.php");
                                         <a class="btn bg-info" href="updateCategory.php?id=<?php echo $category->id;?>" title="Edit">
                                             <i class=" far fa-edit "></i>
                                         </a>
-                                        <a class="btn bg-danger " href=" ">
+                                        <a class="btn bg-danger " href="javascript:question_confirm_Category(<?php echo $category->id;?>)" title="Delete">
                                             <i class=" fas fa-trash" ></i>
                                         </a>
                                     </td>

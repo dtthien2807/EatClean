@@ -26,7 +26,7 @@ class m_promotion extends database{
     }
     public function delete_promotion($id)
     {
-        $sql = "delete from tbl_promotion where id= ?";
+        $sql = "delete from tbl_promotion where id = ?";
         $this->setQuery($sql);
         return $this->execute(array($id));
     }

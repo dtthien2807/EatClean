@@ -6,6 +6,29 @@ class m_shop extends database{
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
-
+    public function read_shop_by_id($id)
+    {
+        $sql = "select * from tbl_product where id = ?";
+        $this->setQuery($sql);
+        return $this->loadRow(array($id));
+    }
+    public function read_category_by_id($id)
+    {
+        $sql = "select * from tbl_categoryproduct where id = ?";
+        $this->setQuery($sql);
+        return $this->loadRow(array($id));
+    }
+    public function read_review_by_id($id_product)
+    {
+        $sql = "select * from tbl_review where status = 0 and id_product = ?";
+        $this->setQuery($sql);
+        return $this->loadAllRows(array($id_product));
+    }
+    public function count_review($id_product)
+    {
+        $sql = "select count(*) as SL from tbl_review where status = 0 and id_product = ?";
+        $this->setQuery($sql);
+        return $this->loadRow(array($id_product));
+    }
 }
 ?>

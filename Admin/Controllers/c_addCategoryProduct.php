@@ -42,5 +42,22 @@ class c_addCategoryProduct{
         $view = "Views/table/v_updateCategory.php";
         include ("Template/layout.php");
     }
+    public function deleteCategory()
+    {
+        if (isset($_GET['id']))
+        {
+            $id = $_GET['id'];
+            $m_category = new m_category();
+            $kq = $m_category->delete_category($id);
+            if($kq)
+            {
+                echo "<script>alert('Xóa thành công !');window.location='table_categoryProduct.php'</script>";
+            }
+            else
+            {
+                echo "<script>alert('Không Thành công!')</script>";
+            }
+        }
+    }
 }
 ?>

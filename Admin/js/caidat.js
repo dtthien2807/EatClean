@@ -12,3 +12,31 @@ function question_confirm_User(id)
         window.location='deleteUser.php?id=' + id
     }
 }
+function question_confirm_Blog(id)
+{
+    if(confirm("Bạn có muốn xóa Blog này?\nHãy cẩn thận!"))
+    {
+        window.location='deleteBlog.php?id=' + id
+    }
+}
+function question_confirm_Category(id)
+{
+    if(confirm("Bạn có muốn xóa loại này?\nHãy cẩn thận!"))
+    {
+        window.location='deleteCategory.php?id=' + id
+    }
+}
+function question_confirm_Product(id)
+{
+    if(confirm("Bạn có muốn xóa sản phẩm này?\nHãy cẩn thận!"))
+    {
+        window.location='deleteProduct.php?id=' + id
+    }
+}
+function question_confirm_Promotion(id)
+{
+    if(confirm("Bạn có muốn xóa khuyến mãi này?\nHãy cẩn thận!"))
+    {
+        window.location='deletePromotion.php?id=' + id
+    }
+}

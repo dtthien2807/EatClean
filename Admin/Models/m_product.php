@@ -24,5 +24,11 @@ class m_product extends database{
         $this->setQuery($sql);
         return $this->execute(array($product,$id_categoryProduct,$date_create,$amount,$price,$status,$image,$description,$detail_description,$id_promotion,$id));
     }
+    public function delete_product($id)
+    {
+        $sql = "delete from tbl_product where id = ?";
+        $this->setQuery($sql);
+        return $this->execute(array($id));
+    }
 }
 ?>

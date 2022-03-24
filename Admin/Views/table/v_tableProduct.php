@@ -95,7 +95,7 @@ include ("Models/m_promotion.php");
                                     <a class="btn bg-info" href="updateProduct.php?id=<?php echo $pr->id; ?>">
                                         <i class=" far fa-edit "></i>
                                     </a>
-                                    <a class="btn bg-danger " href=" ">
+                                    <a class="btn bg-danger " href="javascript:question_confirm_Product(<?php echo $pr->id;?>)" title="Delete">
                                         <i class=" fas fa-trash" ></i>
                                     </a>
                                 </td>

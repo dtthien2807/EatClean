@@ -8,7 +8,7 @@ class c_loginAdmin{
             $name = $_POST['name'];
             $pass = $_POST['password'];
             $this->saveLoginSession($name, $pass);
-            if(isset($_SESSION['name'])){
+            if(isset($_SESSION['full-name'])){
                 header("location:home.php");
             }
             else{
@@ -49,10 +49,8 @@ class c_loginAdmin{
 
         $u= new m_login();
         $read=$u->read_user_by_id_pass($name, $pass);
+        $_SESSION['full-name']=$read->name_admin;
 
-        if(!empty($read)){
-            $_SESSION['name']=$name;
-        }
     }
 }
 ?>

@@ -23,5 +23,11 @@ class m_blog extends database{
         $this->setQuery($sql);
         return $this->execute(array($title_blog,$content,$date_up,$name_admin,$image,$count_view,$description,$status,$id));
     }
+    public function delete_blog($id)
+    {
+        $sql ="delete from tbl_blog where id = ?";
+        $this->setQuery($sql);
+        return $this->execute(array($id));
+    }
 }
 ?>
