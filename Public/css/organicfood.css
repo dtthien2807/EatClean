@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'organicfood';
+    src: url('../fonts/organicfood.eot');
+    src: url('../fonts/organicfoodd41d.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/organicfood.woff') format('woff'),
+         url('../fonts/organicfood.ttf') format('truetype'),
+         url('../fonts/organicfood.svg#Organicfood') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class*='icon-']:before{
+	display: inline-block;
+   font-family: 'organicfood';
+   font-style: normal;
+   font-weight: normal;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale
+}
+.icon-apple-organicfood-v1-codrops-wojciechzasina:before{content:'\0041';}
+.icon-banana-organicfood-v1-codrops-wojciechzasina:before{content:'\0042';}
+.icon-basket-organicfood-v1-codrops-wojciechzasina:before{content:'\0043';}
+.icon-blender-organicfood-v1-codrops-wojciechzasina:before{content:'\0044';}
+.icon-bread-organicfood-v1-codrops-wojciechzasina:before{content:'\0045';}
+.icon-broccoli-organicfood-v1-codrops-wojciechzasina:before{content:'\0046';}
+.icon-carrot-organicfood-v1-codrops-wojciechzasina:before{content:'\0047';}
+.icon-coconut-organicfood-v1-codrops-wojciechzasina:before{content:'\0048';}
+.icon-corn-organicfood-v1-codrops-wojciechzasina:before{content:'\0049';}
+.icon-cucumber-organicfood-v1-codrops-wojciechzasina:before{content:'\004a';}
+.icon-egg-organicfood-v1-codrops-wojciechzasina:before{content:'\004b';}
+.icon-eggplant-organicfood-v1-codrops-wojciechzasina:before{content:'\004c';}
+.icon-ekobag-organicfood-v1-codrops-wojciechzasina:before{content:'\004d';}
+.icon-grain-organicfood-v1-codrops-wojciechzasina:before{content:'\004e';}
+.icon-grape-organicfood-v1-codrops-wojciechzasina:before{content:'\004f';}
+.icon-honey-organicfood-v1-codrops-wojciechzasina:before{content:'\0050';}
+.icon-jam-organicfood-v1-codrops-wojciechzasina:before{content:'\0051';}
+.icon-leaf-organicfood-v1-codrops-wojciechzasina:before{content:'\0052';}
+.icon-lemon-organicfood-v1-codrops-wojciechzasina:before{content:'\0053';}
+.icon-lettuce-organicfood-v1-codrops-wojciechzasina:before{content:'\0054';}
+.icon-milk-organicfood-v1-codrops-wojciechzasina:before{content:'\0055';}
+.icon-mushrooms-organicfood-v1-codrops-wojciechzasina:before{content:'\0056';}
+.icon-onion-organicfood-v1-codrops-wojciechzasina:before{content:'\0057';}
+.icon-pear-organicfood-v1-codrops-wojciechzasina:before{content:'\0058';}
+.icon-pepper-organicfood-v1-codrops-wojciechzasina:before{content:'\0059';}
+.icon-radish-organicfood-v1-codrops-wojciechzasina:before{content:'\005a';}
+.icon-smoothie-organicfood-v1-codrops-wojciechzasina:before{content:'\0061';}
+.icon-squeezer-organicfood-v1-codrops-wojciechzasina:before{content:'\0062';}
+.icon-tomato-organicfood-v1-codrops-wojciechzasina:before{content:'\0063';}
+.icon-watermelon-organicfood-v1-codrops-wojciechzasina:before{content:'\0064';}
