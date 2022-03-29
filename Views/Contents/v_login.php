@@ -18,7 +18,7 @@
     <div class="container">
         <h3 class="register-page-heading text-center">Login Now</h3>
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <form id="login-form" method="POST" action="#" class="register-form">
+            <form id="login-form" method="POST" action="" class="register-form">
                 <h5 class="register-heading text-center">Proceed To Login</h5>
                 <div class="form-group">
                     <input type="text" class="form-control" id="mobile" name="numberphone" placeholder="Enter Your NumberPhone" required>

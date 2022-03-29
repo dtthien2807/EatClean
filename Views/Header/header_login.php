@@ -24,7 +24,7 @@
                             <li><a href="index.php">Home</a></li>
                             <li><a href="shop.php">Shop</a></li>
                             <li><a href="blog.php">Blog</a></li>
-                            <li class="active"><a href="#">Pages</a>
+                            <li><a href="#">Pages</a>
                                 <ul>
                                     <li><a href="about_us.php">About Us</a></li>
                                     <li><a href="deals.php">Deals Page</a></li>
@@ -48,7 +48,7 @@
                                     <li><a href="checkout-confirm.php">Checkout Confirm</a></li>
                                 </ul>
                             </li>
-                            <li><a href="login.php">Login</a></li>
+                            <li class="active"><a href="login.php">Login</a></li>
                         </ul>
                     </div>
                 </div>

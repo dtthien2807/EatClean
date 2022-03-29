@@ -1,3 +1,4 @@
+
 <!-- page banner -->
 <section id="page-banner" class="page-banner" style="background-image: url('Public/images/bg/page-banner.jpg');">
     <div class="container">
@@ -21,17 +22,17 @@
             <div class="col-sm-6">
                 <form id="register-form" method="POST" action="#" class="register-form">
                     <h5 class="register-heading text-center">Proceed To Signup Now</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="firstname" name="fname" placeholder="First Name" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="lastName" name="lname" placeholder="Last Name" required>
-                            </div>
-                        </div>
+                    <?php
+                    include_once 'Views/error.php';
+                    $errorClass = new c_error();
+                    $errorClass->showError($error_user);
+                    //Error::showError($error_1);
+                    ?>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="nname" name="name_user" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" class="form-control date-inputmask" id="date-mask" name="date_user" placeholder="Enter Date">
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>

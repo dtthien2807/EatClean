@@ -44,12 +44,11 @@
                                             <li><a href="addAddress.php">Add Address</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="login.php">Login</a></li>
-                                    <li><a href="register.php">Register</a></li>
                                     <li><a href="checkout.php">Checkout</a></li>
                                     <li><a href="checkout-confirm.php">Checkout Confirm</a></li>
                                 </ul>
                             </li>
+                            <li><a href="login.php">Login</a></li>
                         </ul>
                     </div>
                 </div>
