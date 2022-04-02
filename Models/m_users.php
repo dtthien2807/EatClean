@@ -7,7 +7,7 @@ class m_users extends database{
         return $this->loadAllRows();
     }
     public function read_user_by_email_pass($email, $pass_word){
-        $sql = "select * from tbl_user where email=? and pass_word=?";
+        $sql = "select * from tbl_user where email= '$email' and pass_word= '$pass_word'";
         $this->setQuery($sql);
         return $this->loadRow(array($email, md5($pass_word)));
     }

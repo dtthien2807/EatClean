@@ -53,11 +53,14 @@
                             </ul>
                         </div>
                         <div class="rating-text-two">
-                            <span><a href="#" title="Reviews">(Based on 17 reviews)</a></span><a href="#" title="Write A Review"><i aria-hidden="true" class="icon_pencil-edit"></i> Write a review</a>
+                            <span><a href="#" title="Reviews">(Based on <?php $m_shop= new m_shop();
+                                    $rs = $m_shop->count_review($detail_product->id);
+                                    echo $rs->SL;
+                                    ?> review)</a></span>
                         </div>
                     </div>
                     <div class="product-desc">
-                        <p><br><?php echo $detail_product->description;?><br><a href="#" title="Read More">Read more...</a></p>
+                        <p><br><?php echo $detail_product->description;?></p>
                     </div>
                     <div class="purchase-features-main-block">
                         <div class="row">
@@ -88,41 +91,17 @@
                                             <form id="product-display" action="#">
                                                 <div class="select-filter number">
                                                     <span>Quantity:</span>
-                                                    <input type="text" value="9" name="qtybutton" class="cart-plus-minus-box">
+                                                    <input type="text" value="1" name="qtybutton" class="cart-plus-minus-box">
                                                     <div class="inc qtybutton"> <i class="fa fa-sort-asc"></i></div>
                                                     <div class="dec qtybutton"><i class="fa fa-sort-desc"></i></div>
                                                 </div>
                                             </form>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 col-xs-6 pad-lt-0">
-                                        <div class="sort-btn">
-                                            <div class="sort-dropdown dropdown">
-                                                <button class="btn dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                    <span class="drp-name" data-bind="label">1 kg</span>
-                                                    <span><i class="fa fa-sort-desc"></i></span>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                                                    <li><a href="#" title="dropdown">2 kg</a></li>
-                                                    <li><a href="#" title="dropdown">5 kg</a></li>
-                                                    <li><a href="#" title="dropdown">10 kg</a></li>
-                                                </ul>
+                                        <div class="cart-btn-block">
+                                            <div class="add-cart-btn-two">
+                                                <a href="#" class="btn btn-default" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="or-text">or</div>
-                                <div class="sort-btn">
-                                    <div class="sort-dropdown dropdown">
-                                        <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Choose Box: <span class="drp-name" data-bind="label">10kg</span>
-                                            <span><i class="fa fa-sort-desc"></i></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                            <li><a href="#" title="dropdown">20kg</a></li>
-                                            <li><a href="#" title="dropdown">30kg</a></li>
-                                            <li><a href="#" title="dropdown">50kg</a></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -137,14 +116,14 @@
                                         <i class="fa fa-check-square"></i> In stock
                                     </div>
                                 </div>
-                                <div class="cart-btn-block">
-                                    <div class="add-cart-btn-two">
-                                        <a href="#" class="btn btn-default" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
-                                    </div>
-                                </div>
-                                <div class="wishlist-btn">
-                                    <a href="#" class="btn btn-default" title="Wishlist"><i class="fa fa-heart"></i></a>
-                                </div>
+<!--                                <div class="cart-btn-block">-->
+<!--                                    <div class="add-cart-btn-two">-->
+<!--                                        <a href="#" class="btn btn-default" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="wishlist-btn">-->
+<!--                                    <a href="#" class="btn btn-default" title="Wishlist"><i class="fa fa-heart"></i></a>-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
@@ -156,7 +135,6 @@
                             <li><span><i class="fa fa-pencil-square"></i> Categories: </span><?php $m_shop= new m_shop(); $namecategory = $m_shop->read_category_by_id($detail_product->id_categoryProduct);
                                 echo $namecategory->name_categoryProduct;
                                 ?></li>
-                            <li><span><i class="fa fa-bookmark"></i> Tags: </span><a href="#" title="Carbohydrates">Carbohydrates, </a><a href="#">Fats, </a><a href="#" title="Minerals">Minerals, </a><a href="#" title="Water">Water, </a><a href="#">Nutrition, </a><a href="#" title="Manufacture">Manufacture, </a><a href="#" title="Food">Food</a></li>
                             <li><span class="share-block"><i class="fa fa-share-alt"></i> Share: </span></li>
                             <li class="social-icon">
                                 <ul>
@@ -173,8 +151,7 @@
         <div class="product-dtl-tab">
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
-                <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews (<?php $m_shop= new m_shop();
-                $rs = $m_shop->count_review($detail_product->id);
+                <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews (<?php
                 echo $rs->SL;
                 ?>)</a></li>
             </ul>
@@ -229,28 +206,28 @@
                     <div class="blog-comment-send">
                         <h5 class="comments-heading">Post a review</h5>
                         <p>Fill out all required fields to send a message. You have to login to your wordpress account to post any comment. Please don´t spam.<br>Thank you!</p>
-                        <form id="comment-form" class="comment-form" action="#">
+                        <form id="comment-form" class="comment-form" method="POST" action="#">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name...">
+                                        <input type="text" class="form-control" name="name_user" id="name" placeholder="Enter your name...">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="youremail@email.com">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject (Optional)">
-                                    </div>
-                                </div>
+<!--                                <div class="col-md-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <input type="email" class="form-control" name="email" id="email" placeholder="youremail@email.com">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-md-4">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject (Optional)">-->
+<!--                                    </div>-->
+<!--                                </div>-->
                             </div>
                             <div class="message">
-                                <textarea class="form-control" name="mesaage" rows="3" placeholder="Type your message here..."></textarea>
+                                <textarea class="form-control" name="message" rows="3" placeholder="Type your message here..."></textarea>
                             </div>
-                            <button type="submit" class="btn btn-default">Post Comment</button>
+                            <button type="submit" class="btn btn-default" name="btn-add-review">Post Comment</button>
                         </form>
                     </div>
                 </div>

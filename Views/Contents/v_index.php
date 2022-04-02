@@ -1,4 +1,5 @@
 <!-- <section id="home-slider" class="home-slider"> -->
+
 <div class="item home-slider-bg" style="background-image: url('Public/images/slider/slider-01.jpg')">
     <div class="overlay-bg"></div>
     <div class="container">

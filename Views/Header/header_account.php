@@ -1,4 +1,7 @@
 <!--body start-->
+<?php
+session_start()
+?>
 <body>
 <!-- preloader -->
 <div class="preloader">
@@ -56,7 +59,11 @@
             <div class="col-md-3 hidden-sm hidden-xs">
                 <div class="nav-block-right">
                     <ul>
-                        <li><a href="myaccount.php" title="My Account"><i class="fs1" aria-hidden="true" data-icon=""></i> My Account</a></li>
+                        <li><a href="myaccount.php" title="My Account"><i class="fs1" aria-hidden="true" data-icon=""></i> <?php
+                                if(isset($_SESSION['full-name-users'])) {
+                                    $useriF = $_SESSION['full-name-users'];
+                                    echo $_SESSION['full-name-users'];
+                                }?></a></li>
                         <li><span><i class="fa fa-square"></i></span></li>
                         <li id="cart" class="cart"><a href="#" title="Shopping Cart"><i class="fs1" aria-hidden="true" data-icon=""></i> (3) item</a></li>
                         <li><a href="#" class="search-icon" title="Search"><i class="fa fa-search"></i></a></li>

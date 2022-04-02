@@ -1,4 +1,7 @@
 <!-- page banner -->
+<?php
+@session_start();
+?>
 <section id="page-banner" class="page-banner" style="background-image: url('Public/images/bg/page-banner.jpg');">
     <div class="container">
         <div class="banner-dtl">
@@ -21,12 +24,17 @@
             <form id="login-form" method="POST" action="" class="register-form">
                 <h5 class="register-heading text-center">Proceed To Login</h5>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="mobile" name="numberphone" placeholder="Enter Your NumberPhone" required>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter Your Password">
                 </div>
                 <button type="submit" class="btn btn-default" name="btn-login-user">Login</button>
+                <?php if(isset($_SESSION['error_login_user'])){ ?>
+                    <div class="alert alert-danger" role="alert">
+                        Bạn nhập sai thông tin!
+                    </div>
+                <?php } ?>
                 <div class="login-text">
                     <div class="row">
                         <div class="col-xs-6">

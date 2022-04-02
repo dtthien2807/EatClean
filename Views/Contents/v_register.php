@@ -26,6 +26,7 @@
                     include_once 'Views/error.php';
                     $errorClass = new c_error();
                     $errorClass->showError($error_user);
+                    $errorClass->showError($success);
                     //Error::showError($error_1);
                     ?>
                     <div class="form-group">

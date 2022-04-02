@@ -1,5 +1,5 @@
 <?php
-include ("Controllers/c_login.php");
-$login = new c_login();
+include("Controllers/c_loginUser.php");
+$login = new c_loginUser();
 $login->login();
 ?>

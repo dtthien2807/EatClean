@@ -1,4 +1,8 @@
 <!--body start-->
+<?php
+@session_start();
+
+?>
 <body>
 <!-- preloader -->
 <div class="preloader">
@@ -56,7 +60,12 @@
             <div class="col-md-3 hidden-sm hidden-xs">
                 <div class="nav-block-right">
                     <ul>
-                        <li><a href="myaccount.php" title="My Account"><i class="fs1" aria-hidden="true" data-icon=""></i> My Account</a></li>
+                        <li><a href="myaccount.php" title="My Account"><i class="fs1" aria-hidden="true" data-icon=""></i>
+                                <?php
+                                if(isset($_SESSION['full-name-users'])) {
+                                    $useriF = $_SESSION['full-name-users'];
+                                    echo $_SESSION['full-name-users'];
+                                }?></a></li>
                         <li><span><i class="fa fa-square"></i></span></li>
                         <li id="cart" class="cart"><a href="#" title="Shopping Cart"><i class="fs1" aria-hidden="true" data-icon=""></i> (3) item</a></li>
                         <li><a href="#" class="search-icon" title="Search"><i class="fa fa-search"></i></a></li>
@@ -73,36 +82,6 @@
                             <div class="cart-meta">
                                 <div class="cart-price">Price: $40.00</div>
                                 <div class="cart-qty">Qty: 5</div>
-                            </div>
-                            <div class="cart-remove">
-                                <a href="#" title="Remove From Cart"><i class="fa fa-close"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="cart-content">
-                        <div class="cart-img">
-                            <a href="product-detail.php" title="Lemon"><img src="Public/images/shop/product-05.png" alt="Product"></a>
-                        </div>
-                        <div class="cart-dtl">
-                            <h6 class="cart-title"><a href="product-detail.php" title="Lemon">Lemon</a></h6>
-                            <div class="cart-meta">
-                                <div class="cart-price">Price: $30.00</div>
-                                <div class="cart-qty">Qty: 1</div>
-                            </div>
-                            <div class="cart-remove">
-                                <a href="#" title="Remove From Cart"><i class="fa fa-close"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="cart-content">
-                        <div class="cart-img">
-                            <a href="product-detail.php" title="Berry"><img src="Public/images/shop/product-01.png" alt="Product"></a>
-                        </div>
-                        <div class="cart-dtl">
-                            <h6 class="cart-title"><a href="product-detail.php" title="Berry">Berry</a></h6>
-                            <div class="cart-meta">
-                                <div class="cart-price">Price: $50.00</div>
-                                <div class="cart-qty">Qty: 2</div>
                             </div>
                             <div class="cart-remove">
                                 <a href="#" title="Remove From Cart"><i class="fa fa-close"></i></a>

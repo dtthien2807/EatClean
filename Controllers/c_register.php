@@ -1,6 +1,5 @@
 <?php
-@session_start();
-include("Models/m_users.php");
+include_once("Models/m_users.php");
 class c_register{
     public function __construct()
     {
@@ -17,7 +16,7 @@ class c_register{
             $numberphone = $_POST['numberphone'];
             $email = $_POST['email'];
             $sex = $_POST['select_sex'];
-            $date_create = date("d/m/Y");
+            $date_create = date('Y-m-d', time());
             $status = 0;
             $pass_word = md5($_POST['password']);
             $conf = md5($_POST['conf_password']);
@@ -29,6 +28,7 @@ class c_register{
             if(empty($error_user)) {
                 $result = $m_user->insert_user($id, $name, $date, $identity_card, $adress, $numberphone, $email, $sex, $date_create, $status, $pass_word);
                 if ($result) {
+                    $success[] = "Đăng kí tài khoản thành công";
                     echo "<script>alert('Đăng kí tài khoản thành công !');window.location='login.php'</script>";
                 } else {
                     echo "<script>alert('Lỗi!')</script>";

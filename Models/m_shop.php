@@ -30,5 +30,11 @@ class m_shop extends database{
         $this->setQuery($sql);
         return $this->loadRow(array($id_product));
     }
+    public function insert_review($id, $name_user, $content, $date_review, $status, $id_product)
+    {
+        $sql = "insert into tbl_review values (?,?,?,?,?,?)";
+        $this->setQuery($sql);
+        return $this->execute(array($id, $name_user, $content, $date_review, $status, $id_product));
+    }
 }
 ?>
