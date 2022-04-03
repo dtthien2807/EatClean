@@ -1,4 +1,7 @@
 <!-- page banner -->
+<?php
+@session_start();
+?>
 <section id="page-banner" class="page-banner" style="background-image: url('Public/images/bg/page-banner.jpg');">
     <div class="container">
         <div class="banner-dtl">
@@ -203,33 +206,22 @@
                         }
                         ?>
                     </div>
+                    <?php
+                    if (isset($_SESSION['full-name-users'])) {
+                    ?>
                     <div class="blog-comment-send">
                         <h5 class="comments-heading">Post a review</h5>
                         <p>Fill out all required fields to send a message. You have to login to your wordpress account to post any comment. Please don´t spam.<br>Thank you!</p>
                         <form id="comment-form" class="comment-form" method="POST" action="#">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="name_user" id="name" placeholder="Enter your name...">
-                                    </div>
-                                </div>
-<!--                                <div class="col-md-4">-->
-<!--                                    <div class="form-group">-->
-<!--                                        <input type="email" class="form-control" name="email" id="email" placeholder="youremail@email.com">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="col-md-4">-->
-<!--                                    <div class="form-group">-->
-<!--                                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject (Optional)">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-                            </div>
                             <div class="message">
                                 <textarea class="form-control" name="message" rows="3" placeholder="Type your message here..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-default" name="btn-add-review">Post Comment</button>
                         </form>
                     </div>
+                    <?php
+                    }
+                    ?>
                 </div>
 
             </div>

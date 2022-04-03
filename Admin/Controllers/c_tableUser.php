@@ -1,5 +1,5 @@
 <?php
-include("Models/m_users.php");
+include("Models/m_user.php");
 class c_tableUser{
     public function tableUser(){
         $m_user = new m_user();

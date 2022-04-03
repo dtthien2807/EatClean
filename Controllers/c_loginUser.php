@@ -30,7 +30,14 @@ class c_loginUser{
         $us= new m_users();
         $re=$us->read_user_by_email_pass($email, $password);
         $_SESSION['full-name-users']=$re->name;
+        $_SESSION['info-users']= $re;
 
+    }
+    public function logOut(){
+        unset($_SESSION['full-name-users']);
+        unset($_SESSION['info-users']);
+        unset($_SESSION['error_login_user']);
+        header("location:index.php");
     }
 }
 ?>

@@ -23,7 +23,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="profile-img">
-                                    <img src="Public/images/clients/customer-01.jpg" class="img-responsive" alt="customer">
+                                    <img src="Public/images/clients/meomeo.png" class="img-responsive" alt="customer">
                                 </div>
                             </div>
                             <div class="col-md-8">
@@ -37,7 +37,6 @@
                             <li><a href="myaccount.php" title="My Account"><i class="fa fa-user-circle-o" data-name="myaccount"></i>My Account</a></li>
                             <li class="active"><a href="orderHistory.php" title="My Account"><i aria-hidden="true" class="icon_cart_alt" data-name="orderHistory"></i>Order History</a></li>
                             <li><a href="addressBook.php" title="Address Book"><i aria-hidden="true" class="icon_contacts_alt" data-name="addressBook"></i>Address Book</a></li>
-                            <li><a href="forgetPassword.php" title="Change Password"><i class="fa fa-user-secret" data-name="forgetPassword"></i>Change Password</a></li></ul>
                     </div>
                 </div>
             </div>

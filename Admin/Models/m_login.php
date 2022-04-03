@@ -2,7 +2,7 @@
 include_once ("database.php");
 class m_login extends database{
 
-    public function read_user_by_id_pass($name, $pass){
+    public function read_admin_by_name_pass($name, $pass){
         $sql = "select * from tbl_admin where name_login= '$name' and password= '$pass' ";
         $this->setQuery($sql);
         return $this->loadRow(array($name, md5($pass)));

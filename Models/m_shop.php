@@ -12,6 +12,12 @@ class m_shop extends database{
         $this->setQuery($sql);
         return $this->loadRow(array($id));
     }
+    public function read_shop_by_idCategory($id_categoryProduct)
+    {
+        $sql = "select * from tbl_product where id_categoryProduct=?";
+        $this->setQuery($sql);
+        return $this->loadRow(array($id_categoryProduct));
+    }
     public function read_category_by_id($id)
     {
         $sql = "select * from tbl_categoryproduct where id = ?";

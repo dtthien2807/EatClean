@@ -1,4 +1,7 @@
 <!-- page banner -->
+<?php
+@session_start();
+?>
 <section id="page-banner" class="page-banner" style="background-image: url('Public/images/bg/page-banner.jpg');">
     <div class="container">
         <div class="banner-dtl">
@@ -23,11 +26,11 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="profile-img">
-                                    <img src="Public/images/clients/customer-01.jpg" class="img-responsive" alt="customer">
+                                    <img src="Public/images/clients/meomeo.png" class="img-responsive" alt="customer">
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h5 class="customer-name">John Doe</h5>
+                                <h5 class="customer-name"><?php echo $_SESSION['full-name-users']?></h5>
                                 <div class="ac-status">Premium Account</div>
                             </div>
                         </div>
@@ -37,7 +40,6 @@
                             <li class="active"><a href="myaccount.php" title="My Account"><i class="fa fa-user-circle-o" data-name="myaccount"></i>My Account</a> </li>
                             <li><a href="orderHistory.php" title="Order History"><i aria-hidden="true" class="icon_cart_alt" data-name="orderHistory"></i>Order History</a></li>
                             <li><a href="addressBook.php" title="Address Book"><i aria-hidden="true" class="icon_contacts_alt" data-name="addressBook"></i>Address Book</a></li>
-                            <li><a href="forgetPassword.php" title="Change Password"><i class="fa fa-user-secret" data-name="forgetPassword"></i>Change Password</a></li>
                         </ul>
                     </div>
                 </div>

@@ -17,104 +17,19 @@
 <!--  checkout -->
 <section id="add-address" class="account-page register-page add-address-page">
     <div class="container">
-        <h3 class="address-page-heading text-center">Add New Address</h3>
+        <h3 class="address-page-heading text-center">Edit My Address</h3>
         <div class="row">
-            <div class="col-sm-6">
-                <form id="register-form" action="#" class="register-form">
-                    <h5 class="register-heading text-center">Add Shipping Address</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
-                            </div>
-                        </div>
+            <div class="col-sm-12" >
+                <form id="billing-form" method="POST" action="#" class="register-form" >
+                    <h5 class="register-heading text-center">Edit Billing Address</h5>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="b-mobile" name="number-phone" value="<?php
+                         echo $read_info_user->numberphone; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="mobile" placeholder="Mobile Number">
+                        <input type="text" class="form-control" id="b-address-1" name="address" value="<?php echo $read_info_user->adress; ?>">
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="address-1" placeholder="Address Line 1">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="address-2" placeholder="Address Line 2">
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="city" placeholder="City">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="state" placeholder="State">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="pincode" placeholder="Pincode">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="country" placeholder="Country" required>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-default">Add Address</button>
-                </form>
-            </div>
-            <div class="col-sm-6">
-                <form id="billing-form" action="#" class="register-form">
-                    <h5 class="register-heading text-center">Add Billing Address</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="b-firstname" placeholder="First Name" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="b-lastname" placeholder="Last Name" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="b-mobile" placeholder="Mobile Number">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="b-address-1" placeholder="Address Line 1">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="b-address-2" placeholder="Address Line 2">
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="b-city" placeholder="City">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="b-state" placeholder="State">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="b-pincode" placeholder="Pincode">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="b-country" placeholder="Country" required>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-default">Add Address</button>
+                    <button type="submit" class="btn btn-default" name="btn-edit-address">Add Address</button>
                 </form>
             </div>
         </div>

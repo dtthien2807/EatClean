@@ -12,6 +12,11 @@ class m_blog extends database{
         $this->setQuery($sql);
         return $this->loadRow(array($id));
     }
-
+    public function read_blog_with_2()
+    {
+        $sql = "select * from tbl_blog LIMIT 3, 2";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
 }
 ?>

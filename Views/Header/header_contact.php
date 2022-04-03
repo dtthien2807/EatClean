@@ -36,22 +36,33 @@ session_start();
                                 </ul>
                             </li>
                             <li class="active"><a href="contact.php">Contact</a></li>
+                            <?php
+                            if (isset($_SESSION['full-name-users'])) {
+                                ?>
                             <li><a href="#">Account</a>
                                 <ul>
                                     <li class="had-sub"><a href="#">My Account</a>
                                         <ul>
                                             <li><a href="myaccount.php">My Account</a></li>
                                             <li><a href="orderHistory.php">Order History</a></li>
-                                            <li><a href="forgetPassword.php">Forget Password</a></li>
                                             <li><a href="addressBook.php">Address Book</a></li>
-                                            <li><a href="addAddress.php">Add Address</a></li>
+                                            <li><a href="logOut.php?func=exit">Log out</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="checkout.php">Checkout</a></li>
                                     <li><a href="checkout-confirm.php">Checkout Confirm</a></li>
                                 </ul>
                             </li>
-                            <li><a href="login.php">Login</a></li>
+                            <?php
+                            }
+                            ?>
+                            <?php
+                            if(empty($_SESSION['full-name-users'])) {
+                                ?>
+                                <li><a href="login.php">Login</a></li>
+                                <?php
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -59,12 +70,16 @@ session_start();
             <div class="col-md-3 hidden-sm hidden-xs">
                 <div class="nav-block-right">
                     <ul>
-                        <li><a href="myaccount.php" title="My Account"><i class="fs1" aria-hidden="true" data-icon=""></i><?php
-                                if(isset($_SESSION['full-name-users'])) {
-                                    $useriF = $_SESSION['full-name-users'];
-                                    echo $_SESSION['full-name-users'];
-                                }?></a></li>
-                        <li><span><i class="fa fa-square"></i></span></li>
+                        <?php
+                        if (isset($_SESSION['full-name-users'])) {
+                            $useriF = $_SESSION['full-name-users'];
+                            ?>
+                            <li><a href="myaccount.php" title="My Account"><i class="fs1" aria-hidden="true" data-icon=""></i>
+                                    <?php echo $_SESSION['full-name-users'];?></a></li>
+                            <li><span><i class="fa fa-square"></i></span></li>
+                            <?php
+                        }
+                        ?>
                         <li id="cart" class="cart"><a href="#" title="Shopping Cart"><i class="fs1" aria-hidden="true" data-icon=""></i> (3) item</a></li>
                         <li><a href="#" class="search-icon" title="Search"><i class="fa fa-search"></i></a></li>
                     </ul>

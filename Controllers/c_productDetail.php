@@ -1,4 +1,5 @@
 <?php
+@session_start();
 include ("Models/m_shop.php");
 
 class c_productDetail{
@@ -12,10 +13,10 @@ class c_productDetail{
             $m_shop= new m_shop();
             $detail_product = $m_shop->read_shop_by_id($id_product);
             $read_review=$m_shop->read_review_by_id($id_product);
-            if(isset($_POST['btn-add-review']))
+            if(isset($_POST['btn-add-review'], $_SESSION['full-name-users']))
             {
                 $id = NULL;
-                $name_user = $_POST['name_user'];
+                $name_user = $_SESSION['full-name-users'];
                 $date_review = date('Y-m-d', time());
                 $content = $_POST['message'];
                 $status = 0;

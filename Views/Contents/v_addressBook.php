@@ -1,4 +1,7 @@
 <!-- page banner -->
+<?php
+@session_start();
+?>
 <section id="page-banner" class="page-banner" style="background-image: url('Public/images/bg/page-banner.jpg');">
     <div class="container">
         <div class="banner-dtl">
@@ -24,11 +27,11 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="profile-img">
-                                    <img src="Public/images/clients/customer-01.jpg" class="img-responsive" alt="customer">
+                                    <img src="Public/images/clients/meomeo.png" class="img-responsive" alt="customer">
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h5 class="customer-name">John Doe</h5>
+                                <h5 class="customer-name"><?php echo $_SESSION['full-name-users'];?></h5>
                                 <div class="ac-status">Premium Account</div>
                             </div>
                         </div>
@@ -38,7 +41,6 @@
                             <li><a href="myaccount.php" title="My Account"><i class="fa fa-user-circle-o" data-name="myaccount"></i>My Account</a></li>
                             <li><a href="orderHistory.php" title="Order History"><i aria-hidden="true" class="icon_cart_alt" data-name="orderHistory"></i>Order History</a></li>
                             <li class="active"><a href="addressBook.php" title="Address Book"><i aria-hidden="true" class="icon_contacts_alt" data-name="addressBook"></i>Address Book</a></li>
-                            <li><a href="forgetPassword.php" title="Change Password"><i class="fa fa-user-secret" data-name="forgetPassword"></i>Change Password</a></li>
                         </ul>
                     </div>
                 </div>
@@ -50,33 +52,18 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="address-block">
-                                <h5 class="address-heading">Shipping Address</h5>
-                                <ul>
-                                    <li class="company-name">Media City</li>
-                                    <li>Chechani Bhavan, Near Vishal Mega Mart,</li>
-                                    <li>Shree Cloths Market,</li>
-                                    <li>Bhilwara, Rajasthan, INDIA</li>
-                                    <li>Phone: <a href="tel:#" title="Phone">+91 9999999999</a></li>
-                                    <li class="edit-text"><a href="#" title="Edit">Edit</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="address-block">
                                 <h5 class="address-heading">Billing Address</h5>
                                 <ul>
                                     <li class="company-name">Media City</li>
-                                    <li>Chechani Bhavan, Near Vishal Mega Mart,</li>
-                                    <li>Shree Cloths Market,</li>
-                                    <li>Bhilwara, Rajasthan, INDIA</li>
-                                    <li>Phone: <a href="tel:#" title="Phone">+91 9999999999</a></li>
-                                    <li class="edit-text"><a href="#" title="Edit">Edit</a></li>
+                                    <li><?php $info_user = $_SESSION['info-users'];
+                                    echo $info_user->adress; ?></li>
+                                    <li>Phone: <a href="tel:#" title="Phone"><?php echo $info_user->numberphone; ?></a></li>
+                                    <li class="edit-text"><a href="addAddress.php?id=<?php echo $info_user->id; ?>" title="Edit">Edit</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a href="addAddress.php" class="btn btn-default" title="Add New Address"><i class="fa fa-edit"></i> Add New Address?</a>
             </div>
         </div>
         </div>

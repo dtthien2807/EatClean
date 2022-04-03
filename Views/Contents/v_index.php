@@ -1,5 +1,7 @@
 <!-- <section id="home-slider" class="home-slider"> -->
-
+<?php
+include ("Models/m_blog.php");
+?>
 <div class="item home-slider-bg" style="background-image: url('Public/images/slider/slider-01.jpg')">
     <div class="overlay-bg"></div>
     <div class="container">
@@ -123,11 +125,11 @@
                 <div class="item shop-products other">
                     <div class="shop-products-block">
                         <div class="shop-products-img">
-                            <a href="product-detail.php" title="<?php echo $value->product; ?>"><img src="Admin/Public/myImage/<?php echo $value->image;?>" class="img-responsive" alt="Grapes"></a>
+                            <a href="product-detail.php?id=<?php echo $value->id;?>" title="<?php echo $value->product; ?>"><img src="Admin/Public/myImage/<?php echo $value->image;?>" class="img-responsive" alt="Grapes"></a>
                         </div>
                         <div class="shop-products-dtl-main">
                             <div class="shop-products-dtl">
-                                <h5 class="shop-products-name"><a href="product-detail.php" title="<?php echo $value->product; ?>"><?php echo $value->product; ?></a></h5>
+                                <h5 class="shop-products-name"><a href="product-detail.php?id=<?php echo $value->id;?>" title="<?php echo $value->product; ?>"><?php echo $value->product; ?></a></h5>
                                 <div class="shop-products-rating">
                                     <ul>
                                         <li><i class="fa fa-star active"></i></li>
@@ -145,7 +147,7 @@
                                         <a href="cart.php" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
                                     </div>
                                     <div class="col-xs-6">
-                                        <a href="product-detail.php" title="View Detail"><i class="fa fa-file-text-o"></i> View detail</a>
+                                        <a href="product-detail.php?id=<?php echo $value->id;?>" title="View Detail"><i class="fa fa-file-text-o"></i> View detail</a>
                                     </div>
                                 </div>
                             </div>
@@ -307,44 +309,33 @@
             <h4 class="section-sub-heading">Keep Up To Date With Us</h4>
         </div>
         <div class="row">
+            <?php
+            $b = new m_blog();
+            $blog_index = $b->read_blog_with_2();
+            foreach ($blog_index as $key => $item){
+            ?>
             <div class="col-md-6">
                 <div class="news-block">
                     <div class="row">
                         <div class="col-sm-6 pad-rt-0">
                             <div class="news-img">
-                                <a href="single-blog.php" title="EAT CLEAN Thực Đơn 14 Ngày Thanh Lọc Cơ Thể"><img src="Public/images/blog/img_thucdon.jpg" class="img-responsive" alt="news"></a>
+                                <a href="single-blog.php?id=<?php echo $item->id;?>" title="<?php echo $item->title_blog;?>"><img src="Admin/Public/myImage/<?php echo $item->image;?>" class="img-responsive" alt="news"></a>
                             </div>
                         </div>
                         <div class="col-sm-6 pad-lt-0">
                             <div class="news-post-block">
-                                <h6 class="news-title"><a href="single-blog.php" title="EAT CLEAN Thực Đơn 14 Ngày Thanh Lọc Cơ Thể">EAT CLEAN Thực Đơn 14 Ngày Thanh Lọc Cơ Thể Và Giảm Cân</a></h6>
-                                <div class="news-info">02 December 2021</div>
-                                <p>Cuốn sách chuyên sâu về EAT CLEAN đầu tiên tại Việt Nam - EAT CLEAN trào lưu ăn uống được yêu thích nhất hiện nay.</p>
-                                <a href="single-blog.php" class="news-read-more" title="Read More"><i class="fa fa-chevron-circle-right"></i> Read More</a>
+                                <h6 class="news-title"><a href="single-blog.php?id=<?php echo $item->id;?>" title="<?php echo $item->title_blog;?>"><?php echo $item->title_blog;?></a></h6>
+                                <div class="news-info"><?php echo $item->date_up;?></div>
+                                <p><?php echo $item->description;?></p>
+                                <a href="single-blog.php?id=<?php echo $item->id;?>" class="news-read-more" title="Read More"><i class="fa fa-chevron-circle-right"></i> Read More</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="news-block">
-                    <div class="row">
-                        <div class="col-sm-6 pad-rt-0">
-                            <div class="news-img">
-                                <a href="single-blog.php" title="[TIP] Đồ ăn Eat Clean- Cách lựa chọn thực phẩm cho chế độ ăn Eat Clean"><img src="Public/images/blog/blog-eat.jpg" class="img-responsive" alt="news"></a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 pad-lt-0">
-                            <div class="news-post-block">
-                                <h6 class="news-title"><a href="single-blog.php" title="[TIP] Đồ ăn Eat Clean- Cách lựa chọn thực phẩm cho chế độ ăn Eat Clean">[TIP] Đồ ăn Eat Clean- Cách lựa chọn thực phẩm cho chế độ ăn Eat Clean</a></h6>
-                                <div class="news-info">30 December 2021</div>
-                                <p>Nguyên tắc của phương pháp Eat Clean là như thế nào? Làm thế nào để ăn theo thực đơn hiệu quả nhất?</p>
-                                <a href="single-blog.php" class="news-read-more" title="Read More"><i class="fa fa-chevron-circle-right"></i> Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </section>

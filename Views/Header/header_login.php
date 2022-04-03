@@ -33,21 +33,6 @@
                                 </ul>
                             </li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li><a href="#">Account</a>
-                                <ul>
-                                    <li class="had-sub"><a href="#">My Account</a>
-                                        <ul>
-                                            <li><a href="myaccount.php">My Account</a></li>
-                                            <li><a href="orderHistory.php">Order History</a></li>
-                                            <li><a href="forgetPassword.php">Forget Password</a></li>
-                                            <li><a href="addressBook.php">Address Book</a></li>
-                                            <li><a href="addAddress.php">Add Address</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="checkout-confirm.php">Checkout Confirm</a></li>
-                                </ul>
-                            </li>
                             <li class="active"><a href="login.php">Login</a></li>
                         </ul>
                     </div>
@@ -56,60 +41,12 @@
             <div class="col-md-3 hidden-sm hidden-xs">
                 <div class="nav-block-right">
                     <ul>
-                        <li><a href="myaccount.php" title="My Account"><i class="fs1" aria-hidden="true" data-icon=""></i> My Account</a></li>
-                        <li><span><i class="fa fa-square"></i></span></li>
-                        <li id="cart" class="cart"><a href="#" title="Shopping Cart"><i class="fs1" aria-hidden="true" data-icon=""></i> (3) item</a></li>
+                        <li id="cart" class="cart"><a href="#" title="Shopping Cart"><i class="fs1" aria-hidden="true" data-icon=""></i> (0) item</a></li>
                         <li><a href="#" class="search-icon" title="Search"><i class="fa fa-search"></i></a></li>
                     </ul>
                 </div>
                 <!-- cart -->
                 <ul class="cart-box">
-                    <li class="cart-content">
-                        <div class="cart-img">
-                            <a href="product-detail.php" title="Pomegranate"><img src="Public/images/shop/product-07.png" alt="Product"></a>
-                        </div>
-                        <div class="cart-dtl">
-                            <h6 class="cart-title"><a href="product-detail.php" title="Pomegranate">Pomegranate</a></h6>
-                            <div class="cart-meta">
-                                <div class="cart-price">Price: $40.00</div>
-                                <div class="cart-qty">Qty: 5</div>
-                            </div>
-                            <div class="cart-remove">
-                                <a href="#" title="Remove From Cart"><i class="fa fa-close"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="cart-content">
-                        <div class="cart-img">
-                            <a href="product-detail.php" title="Lemon"><img src="Public/images/shop/product-05.png" alt="Product"></a>
-                        </div>
-                        <div class="cart-dtl">
-                            <h6 class="cart-title"><a href="product-detail.php" title="Lemon">Lemon</a></h6>
-                            <div class="cart-meta">
-                                <div class="cart-price">Price: $30.00</div>
-                                <div class="cart-qty">Qty: 1</div>
-                            </div>
-                            <div class="cart-remove">
-                                <a href="#" title="Remove From Cart"><i class="fa fa-close"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="cart-content">
-                        <div class="cart-img">
-                            <a href="product-detail.php" title="Berry"><img src="Public/images/shop/product-01.png" alt="Product"></a>
-                        </div>
-                        <div class="cart-dtl">
-                            <h6 class="cart-title"><a href="product-detail.php" title="Berry">Berry</a></h6>
-                            <div class="cart-meta">
-                                <div class="cart-price">Price: $50.00</div>
-                                <div class="cart-qty">Qty: 2</div>
-                            </div>
-                            <div class="cart-remove">
-                                <a href="#" title="Remove From Cart"><i class="fa fa-close"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="cart-subtotal text-right">Total: $330</li>
                     <li class="cart-footer">
                         <div class="row">
                             <div class="col-xs-6">

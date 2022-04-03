@@ -28,7 +28,6 @@ class c_register{
             if(empty($error_user)) {
                 $result = $m_user->insert_user($id, $name, $date, $identity_card, $adress, $numberphone, $email, $sex, $date_create, $status, $pass_word);
                 if ($result) {
-                    $success[] = "Đăng kí tài khoản thành công";
                     echo "<script>alert('Đăng kí tài khoản thành công !');window.location='login.php'</script>";
                 } else {
                     echo "<script>alert('Lỗi!')</script>";

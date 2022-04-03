@@ -40,15 +40,14 @@ class c_loginAdmin{
         }
     }
     public function logout(){
-        unset($_SESSION["name"]);
-        unset($_SESSION["password"]);
+        unset($_SESSION["full-name"]);
         unset($_SESSION['error_login']);
         header("location:login.php");
     }
     public function saveLoginSession($name, $pass){
 
         $u= new m_login();
-        $read=$u->read_user_by_id_pass($name, $pass);
+        $read=$u->read_admin_by_name_pass($name, $pass);
         $_SESSION['full-name']=$read->name_admin;
 
     }
