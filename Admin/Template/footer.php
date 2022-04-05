@@ -28,7 +28,9 @@
 <script src="Public/assets/extra-libs/DataTables/datatables.min.js"></script>
 <script src="Public/assets/libs/quill/dist/quill.min.js"></script>
 <script src="js/caidat.js"></script>
-
+<!-- this page js -->
+<script src="Public/assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<script src="Public/assets/libs/magnific-popup/meg.init.js"></script>
 <script>
     /****************************************
      *       Basic Table                   *

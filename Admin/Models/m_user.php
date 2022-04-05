@@ -7,6 +7,12 @@ class m_user extends database{
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
+    public function read_user_by_id($id)
+    {
+        $sql = "select * from tbl_user where id=?";
+        $this->setQuery($sql);
+        return $this->loadRow(array($id));
+    }
     public function delete_user($id)
     {
         $sql ="update tbl_user set status=1 where id=?";

@@ -1,3 +1,6 @@
+<?php
+@session_start();
+?>
 <section id="blog-single-with-audio" class="blog-single-with-image outline-50">
     <div class="banner">
         <img src="Public/images/blog-single/banner-2.jpg" class="img-responsive" alt="banner">
@@ -104,16 +107,18 @@
         <div class="single-blog-related-post">
             <h4 class="related-post-heading">Related Post</h4>
             <div class="row">
-                <?php foreach ($blog as $key => $value){ ?>
+                <?php
+
+                foreach ($blog_index_3 as $key => $item){ ?>
                 <div class="col-md-4 col-sm-6">
                     <div class="blog-grid-block">
                         <div class="blog-grid-img">
-                            <a href="single-blog.php?id=<?php echo $value->id; ?>" title="<?php echo $value->title_blog; ?>"><img src="Admin/Public/myImage/<?php echo $value->image;?>" class="img-responsive" alt="blog-img"></a>
+                            <a href="single-blog.php?id=<?php echo $item->id; ?>" title="<?php echo $item->title_blog; ?>"><img src="Admin/Public/myImage/<?php echo $item->image;?>" class="img-responsive" alt="blog-img"></a>
                         </div>
                         <div class="blog-grid-dtl">
-                            <div class="date"><?php echo $value->date_up; ?></div>
-                            <h5 class="blog-grid-dtl-heading"><a href="#" title="<?php echo $value->title_blog; ?>"><?php echo $value->title_blog; ?></a></h5>
-                            <a href="single-blog.php?id=<?php echo $value->id; ?>" class="btn arw-btn" title="Continue">Continue</a>
+                            <div class="date"><?php echo $item->date_up; ?></div>
+                            <h5 class="blog-grid-dtl-heading"><a href="#" title="<?php echo $item->title_blog; ?>"><?php echo $item->title_blog; ?></a></h5>
+                            <a href="single-blog.php?id=<?php echo $item->id; ?>" class="btn arw-btn" title="Continue">Continue</a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +128,14 @@
             </div>
         </div>
         <div class="blog-comment">
-            <h4 class="related-post-heading">02 Comments</h4>
+            <h4 class="related-post-heading"><?php $m_blog= new m_blog();
+                $count_comment = $m_blog->count_comment($blogg->id);
+                echo $count_comment->soluong;
+                ?> Comments</h4>
+            <?php
+            $read_comment = $m_blog->read_comment_by_id($blogg->id);
+            foreach ($read_comment as $rc){
+            ?>
             <div class="row">
                 <div class="col-xs-10">
                     <div class="media">
@@ -132,7 +144,7 @@
                         </div>
                         <div class="media-body">
                             <div class="media-heading-block">
-                                <h6 class="media-heading">Johnathan Doe - <span>posted 2 minutes ago</span></h6>
+                                <h6 class="media-heading"><?php echo $rc->name;?> <span><?php echo $rc->date;?></span></h6>
                                 <div class="shop-products-rating">
                                     <ul>
                                         <li><i class="fa fa-star"></i></li>
@@ -143,67 +155,31 @@
                                     </ul>
                                 </div>
                             </div>
-                            <p>Ad sumo admodum tincidunt cum. Mei et ullum lobortis, virtute accusamus pertinacia ne vim. At summo aliquando ius. Sea ad munere nullam admodum. Quo legere vivendo pericula et, ea aliquam placerat ullamcorper mei. Vide tractatos ei eos. Duo dicta commune intellegam cu, cu eum partem omnesque prodesset. Mea eripuit voluptatum in. Congue aperiam maiestatis et mea, nih</p>
-                            <div class="media comments-reply">
-                                <div class="media-left">
-                                    <a href="#" title="User"><img src="Public/images/blog/comment-user-06.jpg" class="media-object" alt="comment-client-02"></a>
-                                </div>
-                                <div class="media-body">
-                                    <div class="media-heading-block">
-                                        <h6 class="media-heading-reply">Susan Muscluas - <span>posted 3 hours ago</span></h6>
-                                        <div class="shop-products-rating">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-half-o"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p>Ad sumo admodum tincidunt cum. Mei et ullum lobortis, virtute accusamus pertinacia ne vim. At summo aliquando ius. Sea ad munere nullam admodum. Quo legere vivendo pericula et, ea aliquam placerat ullamcorper mei. Vide tractatos ei eos. Duo dicta commune intellegam cu, cu eum partem omnesque prodesset et mea, nihil.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-2">
-                    <div class="media-reply-block">
-                        <div class="media-reply">
-                            <a href="#"><i class="fa fa-mail-forward" title="Reply"></i> Reply</a>
-                        </div>
-                        <div class="media-reply hidden-xs">
-                            <a href="#"><i class="fa fa-mail-forward" title="Reply"></i> Reply</a>
+                            <p><?php echo $rc->content;?></p>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php
+            }
+            ?>
         </div>
         <div class="blog-comment-send">
             <h5 class="comments-heading">Leave A Comment</h5>
             <p>Fill out all required fields to send a message. You have to login to your wordpress account to post any comment. Please don´t spam.<br>Thank you!</p>
-            <form id="comment-form" class="comment-form" action="#">
+            <form id="comment-form" class="comment-form" action="#" method="POST">
                 <div class="row">
                     <div class="col-md-4 col-sm-4">
                         <div class="form-group">
                             <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name...">
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="youremail@email.com">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject (Optional)">
-                        </div>
-                    </div>
+
                 </div>
                 <div class="message">
-                    <textarea class="form-control" name="mesaage" rows="3" placeholder="Type your message here..."></textarea>
+                    <textarea class="form-control" name="message" rows="3" placeholder="Type your message here..."></textarea>
                 </div>
-                <button type="button" class="btn btn-default">Post Comment</button>
+                <button type="submit" class="btn btn-default" name="btn-add-comment">Post Comment</button>
             </form>
         </div>
     </div>

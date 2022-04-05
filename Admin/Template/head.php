@@ -11,11 +11,13 @@
     <!-- Custom CSS -->
     <link href="Public/assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <link href="Public/assets/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
     <link href="Public/dist/css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Public/assets/extra-libs/multicheck/multicheck.css">
     <link href="Public/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Public/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="Public/assets/libs/quill/dist/quill.snow.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
