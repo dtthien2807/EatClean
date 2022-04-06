@@ -96,7 +96,7 @@
                   </div>
                   <div class="shop-two-products-icon">
                     <ul>
-                      <li><a href="cart.php" title="Add To Cart"><i class="fa fa-shopping-bag"></i></a></li>
+                      <li><a href="cart.php?cart=cart&id=<?php echo $value->id; ?>" title="Add To Cart"><i class="fa fa-shopping-bag"></i></a></li>
                       <li><a href="Admin/Public/myImage/<?php echo $value->image;?>" class="product-popup" title="<?php echo $value->product; ?>"><i class="fa fa-search"></i></a></li>
                       <li><a href="#" title="Wish List"><i class="fa fa-heart-o"></i></a></li>
                       <li><a href="product-detail.php?id=<?php echo $value->id;?>" title="Compare"><i class="fa fa-random"></i></a></li>

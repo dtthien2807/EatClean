@@ -10,7 +10,7 @@ class c_addBlog{
             $date_up= $_POST['date-mask'];
             $name_admin= $_POST['author'];
             $image=($_FILES['file-img']['error']==0) ? $_FILES['file-img']['name']:"";
-            $count_view= $_POST['view'];
+            $count_view= 0;
             $descript= $_POST['txt_des'];
             $status= $_POST['select_adj'];
             $insert = new m_blog();
@@ -43,10 +43,9 @@ class c_addBlog{
                 $date_up= $_POST['date-mask'];
                 $name_admin= $_POST['author'];
                 $image=($_FILES['file-img']['error']==0) ? $_FILES['file-img']['name']:$blogs->image;
-                $count_view= $_POST['view'];
                 $description= $_POST['txt_des'];
                 $status= $_POST['select_adj'];
-                $kq = $m_blog->update_blog($id, $title_blog, $content, $date_up, $name_admin, $image, $count_view, $description, $status);
+                $kq = $m_blog->update_blog($id, $title_blog, $content, $date_up, $name_admin, $image, $description, $status);
                 if($kq)
                 {
                     if($_FILES['file-img']['error']==0)

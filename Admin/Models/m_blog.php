@@ -17,11 +17,11 @@ class m_blog extends database{
         $this->setQuery($sql);
         return $this->loadRow(array($id));
     }
-    public function update_blog($id, $title_blog, $content, $date_up, $name_admin, $image, $count_view, $description, $status)
+    public function update_blog($id, $title_blog, $content, $date_up, $name_admin, $image, $description, $status)
     {
-        $sql = "update tbl_blog set title_blog=?,content=?,date_up=?,name_admin=?,image=?,count_view=?,description=?,status=? where id=?";
+        $sql = "update tbl_blog set title_blog=?,content=?,date_up=?,name_admin=?,image=?,description=?,status=? where id=?";
         $this->setQuery($sql);
-        return $this->execute(array($title_blog,$content,$date_up,$name_admin,$image,$count_view,$description,$status,$id));
+        return $this->execute(array($title_blog,$content,$date_up,$name_admin,$image,$description,$status,$id));
     }
     public function delete_blog($id)
     {

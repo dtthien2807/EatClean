@@ -50,12 +50,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="fname" class="col-sm-3 text-left control-label col-form-label">View</label>
-                                <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="view" name="view" placeholder="View">
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="lname" class="col-sm-3 text-left control-label col-form-label">Status</label>
                                 <div class="col-sm-9">
                                     <select class="select2 form-control custom-select" name="select_adj" style="width: 100%; height:36px;">

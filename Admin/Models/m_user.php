@@ -19,5 +19,11 @@ class m_user extends database{
         $this->setQuery($sql);
         return $this->execute(array($id));
     }
+    public function count_user()
+    {
+        $sql = "select count(*) as soluong_user from tbl_user";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
 }
 ?>

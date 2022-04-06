@@ -61,7 +61,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                 </div>
-                                <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" name="password" aria-describedby="basic-addon1" required="">
+                                <input type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password" name="password" aria-describedby="basic-addon1" required="">
                             </div>
                             <?php if(isset($_SESSION['error_login'])){ ?>
                                 <div class="alert alert-danger" role="alert">

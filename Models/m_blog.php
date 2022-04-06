@@ -12,6 +12,12 @@ class m_blog extends database{
         $this->setQuery($sql);
         return $this->loadRow(array($id));
     }
+    public function update_count_blog($id)
+    {
+        $sql = "update tbl_blog set count_view=count_view+1 where id=?";
+        $this->setQuery($sql);
+        return $this->execute(array($id));
+    }
     public function read_blog_with_2()
     {
         $sql = "select * from tbl_blog LIMIT 3, 2";

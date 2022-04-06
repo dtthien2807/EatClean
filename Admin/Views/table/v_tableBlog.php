@@ -40,8 +40,8 @@ include ("Models/m_blog.php");
                                 <th>Create At</th>
                                 <th>By</th>
                                 <th>Image</th>
-                                <th>Description</th>
                                 <th>View</th>
+                                <th>Description</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>

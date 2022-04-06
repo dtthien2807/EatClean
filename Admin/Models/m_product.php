@@ -30,5 +30,11 @@ class m_product extends database{
         $this->setQuery($sql);
         return $this->execute(array($id));
     }
+    public function count_product()
+    {
+        $sql = "select count(*) as soluong_product from tbl_product";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
 }
 ?>

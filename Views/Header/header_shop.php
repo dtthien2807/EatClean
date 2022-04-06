@@ -80,7 +80,11 @@
                             <?php
                         }
                         ?>
-                        <li id="cart" class="cart"><a href="#" title="Shopping Cart"><i class="fs1" aria-hidden="true" data-icon=""></i> (3) item</a></li>
+                        <li id="cart" class="cart"><a href="#" title="Shopping Cart"><i class="fs1" aria-hidden="true" data-icon=""></i> (<?php if(isset($_SESSION['cart'])){
+                            echo count($_SESSION['cart']);
+                        }else{
+                            echo '0';
+                        } ?>) item</a></li>
                         <li><a href="#" class="search-icon" title="Search"><i class="fa fa-search"></i></a></li>
                     </ul>
                 </div>

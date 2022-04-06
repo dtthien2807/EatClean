@@ -1,7 +1,9 @@
 <?php
 @session_start();
 include ("Models/m_login.php");
+include ("Models/m_adminPosition.php");
 class c_loginAdmin{
+
     public function Hienthi()
     {
         if (isset($_POST['submit'])) {
@@ -24,11 +26,12 @@ class c_loginAdmin{
             $id_adminPosition= $_POST['position'];
             $name_admin = $_POST['full_name'];
             $name_login= $_POST['name_login'];
-            $password= $_POST['pass_w'];
+            $password= md5($_POST['pass_w']);
             $email= $_POST['email'];
-            $date_sign_up = time();
+            $date_sign_up = date('Y-m-d', time());
             $status = 0;
             $insert = new m_login();
+
             $kq=$insert->insert_admin($id, $id_adminPosition, $name_admin, $name_login, $password, $email, $date_sign_up, $status);
             if($kq)
             {

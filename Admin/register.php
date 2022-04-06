@@ -1,6 +1,4 @@
-<?php
-include ("Models/m_adminPosition.php");
-?>
+
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -74,30 +72,19 @@ include ("Models/m_adminPosition.php");
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                 </div>
-                                <input type="text" class="form-control form-control-lg" name="pass_w" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                                <input type="password" class="form-control form-control-lg" name="pass_w" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                 </div>
-                                <input type="text" class="form-control form-control-lg" name="conf_pass" placeholder=" Confirm Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                                <input type="password" class="form-control form-control-lg" name="conf_pass" placeholder=" Confirm Password" aria-label="Password" aria-describedby="basic-addon1" required>
                             </div>
                             <div class="input-group mb-3">
                                     <select class="select2 form-control custom-select" name="position" style="width: 100%; height:45px;">
                                         <option>Select Position</option>
-                                        <?php
-                                        $m_position = new m_adminPosition();
-                                        $listPo = $m_position->read_position();
-
-                                        foreach ($listPo as $key => $po)
-                                        {
-                                            ?>
-                                            <option value="<?php echo $po->id; ?>"><?php
-                                                echo $po->position;
-                                                ?></option>
-                                            <?php
-                                        }
-                                        ?>
+                                         <option value="1">Nhân Viên</option>
+                                        <option value="2">Quản lí</option>
                                     </select>
                             </div>
                         </div>

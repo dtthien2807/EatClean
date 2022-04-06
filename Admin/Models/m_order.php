@@ -7,6 +7,12 @@ class m_order extends database{
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
+    public function count_order()
+    {
+        $sql = "select count(*) as soluong_order from tbl_order";
+        $this->setQuery($sql);
+        return $this->loadRow();
+    }
 
 }
 ?>

@@ -22,6 +22,7 @@ class c_blog{
             $blogg = $b->read_blog_by_id($id_blog);
             $blog_index_3 = $b->read_blog_with_3();
             $comment_blog = $b->read_comment_by_id($id_blog);
+            $count_blog = $b->update_count_blog($id_blog);
             if(isset($_POST['btn-add-comment']))
             {
                 $id = NULL;
