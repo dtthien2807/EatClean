@@ -42,5 +42,11 @@ class m_shop extends database{
         $this->setQuery($sql);
         return $this->execute(array($id, $name_user, $content, $date_review, $status, $id_product));
     }
+    public function select_img_by_id_product($id_product)
+    {
+        $sql = "select * from tbl_images where status = 0 and id_product = ?";
+        $this->setQuery($sql);
+        return $this->loadAllRows(array($id_product));
+    }
 }
 ?>

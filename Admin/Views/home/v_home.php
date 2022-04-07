@@ -44,8 +44,8 @@
                         <div class="row">
                             <!-- column -->
                             <div class="col-lg-9">
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content" id="flot-line-chart"></div>
+                                <div class="chart-container" style="width: 640px; height: auto;">
+                                    <canvas id="mycanvas"></canvas>
                                 </div>
                             </div>
                             <div class="col-lg-3">

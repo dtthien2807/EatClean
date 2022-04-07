@@ -1,5 +1,6 @@
 <?php
 @session_start();
+error_reporting(E_ERROR | E_PARSE);
 include ("Models/m_login.php");
 include ("Models/m_adminPosition.php");
 class c_loginAdmin{

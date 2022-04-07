@@ -58,9 +58,9 @@ include ("Models/m_promotion.php");
                             foreach ($listProduct as $key => $pr) {
                             ?>
                             <tr>
-                                <td><?php echo $pr->product;?></td>
-                                <td>
-                                    <?php $name_category = $m_category->read_category_by_id($pr->id_categoryProduct);
+                                <td><a href="gallery.php?id_product=<?php echo $pr->id;?>" title="album">
+                                    <?php echo $pr->product;?></a></td>
+                                <td><?php $name_category = $m_category->read_category_by_id($pr->id_categoryProduct);
                                         echo $name_category->name_categoryProduct;
                                     ?></td>
                                 <td><?php echo $pr->date_create;?></td>

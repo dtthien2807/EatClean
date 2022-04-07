@@ -1,6 +1,6 @@
 <!-- page banner -->
 
-<?php @session_start; ?>
+<?php @session_start;?>
 <section id="page-banner" class="page-banner" style="background-image: url('Public/images/bg/page-banner.jpg');">
     <div class="container">
         <div class="banner-dtl">
@@ -22,9 +22,9 @@
             <a href="#" class="close" data-dismiss="alert" aria-label="close" title="Close">&times;</a>
             <i class="fa fa-shopping-basket"></i> <?php echo count($product); ?> Items in cart
         </div>
-       
-        <?php foreach($product as $key=>$value){
-            ?>
+    <form id="order" action="" method="POST">
+        <?php foreach ($product as $key => $value) { ?>
+    
         <div class="cart-products-main-block">
             <div class="row">
                 <div class="col-sm-8">
@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="cart-btn-block">
                                         <div class="add-cart-btn-two">
-                                            <a href="#" class="btn btn-default" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Remove from cart</a>
+                                            <a href="cart.php?cart=delete&idProduct=<?php echo $value['id']; ?>" class="btn btn-default" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Remove from cart</a>
                                         </div>
                                         <div class="wishlist-btn">
                                             <a href="#" class="btn btn-default" title="Wishlist"><i class="fa fa-heart"></i></a>
@@ -64,14 +64,14 @@
                                     <div class="product-display">
                                         <form id="select-filter-2" action="#">
                                             <div class="select-filter number">
-                                                <input type="text" value="<?php echo $value['qty']; ?>" name="qtybutton" class="cart-plus-minus-box">
+                                                <input type="text" value="<?= $value['qty']; ?>" name="qty[<?= $value['id']; ?>]" class="cart-plus-minus-box">
                                                 <div class="inc qtybutton"> <i class="fa fa-sort-asc"></i></div>
                                                 <div class="dec qtybutton"><i class="fa fa-sort-desc"></i></div>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
-                              
+
                             </div>
                         </div>
                     </div>
@@ -80,15 +80,19 @@
                     <div class="order-block">
                         <div class="cart-total-block">
                             <div class="cart-shipping-info text-right">
-                                <div class="cart-shipping-info-text">Est. Delivery : 26 - 29 Dec</div>
-                                <div class="cart-price"><?php $value['price']; ?></div>
+                                <div class="cart-shipping-info-text">Est. Delivery : <?php echo date('Y-m-d', time());?></div>
+                                <div class="cart-price"><?php echo number_format($value['price']);?></div>
 
                                 <hr>
                             </div>
                             <table class="cart-table-two">
                                 <tr>
-                                    <td>Subtotal :</td>
-                                    <td class="text-right">$10</td>
+                                    <td>Price :</td>
+                                    <td class="text-right"><?php
+
+                                echo number_format($value['price']) . ' d';
+
+                                 ?></td>
                                 </tr>
                                 <tr>
                                     <td><hr></td>
@@ -96,7 +100,10 @@
                                 </tr>
                                 <tr>
                                     <th>Total</th>
-                                    <th class="text-right">$13</th>
+                                    <th class="text-right"><?php
+                                    $total = $value['qty'] * $value['price'];
+                                        echo number_format($total) . ' d';
+                                        ?></th>
                                 </tr>
                             </table>
                         </div>
@@ -104,8 +111,10 @@
                 </div>
             </div>
         </div>
-        <?php
-        } ?>
+        <?php } ?>
+           
+        <button class="btn btn-default" type="submit" name="update">Update Cart</button>
+        </form>
         <div class="cart-final-block">
             <div class="row">
                 <div class="col-sm-8">

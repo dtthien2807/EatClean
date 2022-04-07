@@ -27,11 +27,29 @@ class c_cart
         //$shopp=$s->read_shop();
 
     }
+
+    public function removeCart()
+    {
+        if ($_GET['cart'] == 'delete') {
+            $idProduct = $_GET['idProduct'] ?? null;
+            unset($_SESSION['cart'][$idProduct]);
+
+            header('Location:cart.php');
+        }
+
+    }
+    public function update()
+    {
+        if(isset($_POST['update'])){
+            print_r($_POST);
+        }
+    }
     public function cart()
     {
-        if(isset($_SESSION['cart'])){
+        if (isset($_SESSION['cart'])) {
             $product = $_SESSION['cart'];
         }
+       
         // echo '<pre>';
         // print_r($product);
         $view_header = "Views/Header/header_account.php";

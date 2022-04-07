@@ -18,7 +18,7 @@ class c_home{
         if($sid = session_id())
         {
             $ip = $_SERVER['REMOTE_ADDR']; //GET IP ADDRESS
-//            $m_active->delete_active();
+            $m_active->delete_active();
             $select_active = $m_active->select_active($ip);
             if(!$select_active)
             {

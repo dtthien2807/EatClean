@@ -18,7 +18,7 @@ class c_register{
             $sex = $_POST['select_sex'];
             $date_create = date('Y-m-d', time());
             $status = 0;
-            $pass_word = $_POST['password'];
+            $pass_word =$_POST['password'];
             $conf = $_POST['conf_password'];
             $m_user = new m_users();
             if($pass_word != $conf)

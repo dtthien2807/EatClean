@@ -63,7 +63,7 @@ include ("Models/m_promotion.php");
                                 <label for="fname" class="col-sm-3 text-left control-label col-form-label">Image</label>
                                 <div class="col-sm-9">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="file_img" id="validatedCustomFile" required>
+                                        <input type="file" class="custom-file-input" name="file_img" id="validatedCustomFile" >
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                         <?php if ($products->image!=""){?>
                                         <img src="Public/myImage/<?php echo $products->image;?>" width="80px"/>

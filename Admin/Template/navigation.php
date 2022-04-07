@@ -18,9 +18,6 @@
                         <li class="sidebar-item"><a href="tableOrder.php" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Order </span></a></li>
                     </ul>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="gallery.php" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Gallery </span></a>
-                </li>
-
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

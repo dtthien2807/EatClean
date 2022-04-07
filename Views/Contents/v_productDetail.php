@@ -29,15 +29,17 @@
                         <div class="item product-gallery-thumb active">
                             <a href="#" data-image="Admin/Public/myImage/<?php echo $detail_product->image;?>" data-zoom-image="Admin/Public/myImage/<?php echo $detail_product->image;?>"><img src="Admin/Public/myImage/<?php echo $detail_product->image;?>" class="img-responsive" alt="product-thumb-1"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
                         </div>
+                        <?php
+                        $m_shop= new m_shop();
+                        $select_img = $m_shop->select_img_by_id_product($detail_product->id);
+                        foreach ($select_img as $images){
+                        ?>
                         <div class="item product-gallery-thumb">
-                            <a href="#" data-image="Public/images/shop/product-02.jpg" data-zoom-image="Public/images/shop/product-full-02.jpg"><img src="Public/images/shop/product-thumb-02.jpg" class="img-responsive" alt="product-thumb-2"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
+                            <a href="#" data-image="Admin/Public/myImage/product-detail/<?php echo $images->image;?>" data-zoom-image="Admin/Public/myImage/product-detail/<?php echo $images->image;?>"><img src="Admin/Public/myImage/product-detail/<?php echo $images->image;?>" class="img-responsive" alt="product-thumb-2"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
                         </div>
-                        <div class="item product-gallery-thumb">
-                            <a href="#" data-image="Admin/Public/myImage/<?php echo $detail_product->image;?>" data-zoom-image="Admin/Public/myImage/<?php echo $detail_product->image;?>"><img src="Admin/Public/myImage/<?php echo $detail_product->image;?>" class="img-responsive" alt="product-thumb-3"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
-                        </div>
-                        <div class="item product-gallery-thumb">
-                            <a href="#" data-image="Public/images/shop/product-02.jpg" data-zoom-image="Public/images/shop/product-full-02.jpg"><img src="Public/images/shop/product-thumb-04.jpg" class="img-responsive" alt="product-thumb-4"><div class="product-gallery-overlay"><span><i class="fa fa-search"></i></span></div></a>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
