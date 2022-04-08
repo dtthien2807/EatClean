@@ -1,6 +1,8 @@
 <!-- page banner -->
 
-<?php @session_start;?>
+<?php @session_start();
+$info_user = $_SESSION['info-users'];
+?>
 <section id="page-banner" class="page-banner" style="background-image: url('Public/images/bg/page-banner.jpg');">
     <div class="container">
         <div class="banner-dtl">
@@ -22,7 +24,7 @@
             <a href="#" class="close" data-dismiss="alert" aria-label="close" title="Close">&times;</a>
             <i class="fa fa-shopping-basket"></i> <?php echo count($product); ?> Items in cart
         </div>
-    <form id="order" action="" method="POST">
+    <form id="order" action="#" method="POST">
         <?php foreach ($product as $key => $value) { ?>
     
         <div class="cart-products-main-block">
@@ -62,13 +64,11 @@
                                 <div class="product-dtl-btn">
                                     <div class="btn-title">Qty:</div>
                                     <div class="product-display">
-                                        <form id="select-filter-2" action="#">
                                             <div class="select-filter number">
-                                                <input type="text" value="<?= $value['qty']; ?>" name="qty[<?= $value['id']; ?>]" class="cart-plus-minus-box">
+                                                <input type="text" value="<?php echo $value['qty']; ?>" name="qty[<?= $value['id']; ?>]" class="cart-plus-minus-box">
                                                 <div class="inc qtybutton"> <i class="fa fa-sort-asc"></i></div>
                                                 <div class="dec qtybutton"><i class="fa fa-sort-desc"></i></div>
                                             </div>
-                                        </form>
                                     </div>
                                 </div>
 
@@ -113,8 +113,10 @@
         </div>
         <?php } ?>
            
-        <button class="btn btn-default" type="submit" name="update">Update Cart</button>
+
+        <button type="submit" class="btn btn-default">Update Cart</button>
         </form>
+
         <div class="cart-final-block">
             <div class="row">
                 <div class="col-sm-8">
@@ -126,7 +128,16 @@
                     <table class="cart-table-two cart-final-table">
                         <tr>
                             <th>Total</th>
-                            <th class="text-right"><span>$39</span></th>
+                            <th class="text-right"><span><?php 
+                            $total = 0;
+                            foreach($product as $k=>$v){
+                              $total +=   $v['price']*$v['qty'];
+                               ; 
+                            } 
+
+                           echo $total;
+                           $_SESSION['total_cart'] = $total;
+                            ?></span></th>
                         </tr>
                     </table>
                 </div>
@@ -136,16 +147,14 @@
         <div class="row">
             <div class="col-sm-8">
                 <div class="cart-coupon-box">
-                    <div class="cart-coupon-text">Have a promo code? Apply Here</div>
-                    <form id="cart-coupon-form" class="cart-coupon-form" action="#">
-                        <input type="text" id="coupon" class="form-control" placeholder="Enter promo code">
-                        <a href="#" class="coupon-apply-text" title="Apply">Apply</a>
-                    </form>
+                   
+                
                 </div>
             </div>
             <div class="col-sm-4 text-right">
                 <div class="cart-final-btn cart-pay-btn">
-                    <a href="#" class="btn btn-default" title="Proceed To Pay">Proceed to Pay $39</a>
+                    <a href="<?php if(isset($_SESSION['full-name-users'])) echo 'checkout-confirm.php';
+                    else echo 'checkout.php';?>" class="btn btn-default" title="Proceed To Pay"> Order</a>
                 </div>
             </div>
         </div>

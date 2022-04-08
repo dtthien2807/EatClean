@@ -24,7 +24,11 @@ $result = $mysqli->query($query);
 //loop through the returned data
 $data = array();
 foreach ($result as $row) {
-    $data[] = $row;
+    $data[] = array(
+        'date_in'		=>	$row["date_in"],
+        'soluongip'			=>	$row["soluongip"],
+        'color'			=>	'#' . rand(100000, 999999) . ''
+    );
 }
 
 //free memory associated with result

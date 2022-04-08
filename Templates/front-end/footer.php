@@ -40,14 +40,13 @@
                             <li><a href="myaccount.php" title="Thông tin cá nhân">Thông tin cá nhân</a></li>
                             <li><a href="deals.php" title="Dịch vụ">Dịch vụ</a></li>
                             <li><a href="checkout.php" title="Thanh toán">Thanh toán</a></li>
-                            <li><a href="forgetPassword.php" title="Quên mật khẩu">Quên mật khẩu</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12">
                     <div class="contact-widget footer-widget">
                         <h5 class="widget-heading">Contact Info</h5>
-                        <form id="contact-form" class="contact-form" action="#">
+                        <form id="contact-form" class="contact-form" method="POST" action="#">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="name" placeholder="Name">
                                 <i class="fa fa-user"></i>
@@ -59,7 +58,7 @@
                             <div class="form-group">
                                 <textarea name="message" id="message" placeholder="Message"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-default">Send Now</button>
+                            <button type="submit" class="btn btn-default" name="btn-contact-info">Send Now</button>
                         </form>
                     </div>
                 </div>
@@ -111,6 +110,9 @@
 <script type="text/javascript" src="Public/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 <script type="text/javascript" src="Public/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
 <script type="text/javascript" src="Public/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="Public/js/ajax_cart.js"></script>
+<script type="text/javascript" src="Public/js/Ajax_gia_sp.js"></script>
+<script type="text/javascript" src="Public/js/ajax_xoa_cart.js"></script>
 <!-- end revolution js files -->
 <script type="text/javascript" src="Public/js/theme.js"></script> <!-- custom js -->
 <script type="text/javascript">

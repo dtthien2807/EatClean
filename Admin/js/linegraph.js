@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-        url : "http://localhost/eatcleanproject/Admin/Models/m_data_onl.php",
+        url : "Models/m_data_onl.php",
         type : "GET",
         success : function(data){
             console.log(data);
@@ -17,7 +17,7 @@ $(document).ready(function(){
                 labels: date_in,
                 datasets: [
                     {
-                        label: "Tong nguoi ghe tham",
+                        label: "Số người truy cập website",
                         fill: false,
                         lineTension: 1,
                         backgroundColor: "rgba(59, 89, 152, 0.75)",

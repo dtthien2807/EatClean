@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-xs-6">
                                 <div class="blog-user-img">
-                                    <img src="Public/images/blog/blog-single-user-02.jpg" class="img-responsive" alt="blog-user">
+                                    <img src="Public/images/clients/meomeo.png" class="img-responsive" alt="blog-user">
                                 </div>
                             </div>
                             <div class="col-xs-6">
@@ -33,12 +33,7 @@
                                         <div class="blog-user-dtl"><?php echo $blogg->date_up;?></div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-4">
-                                    <div class="blog-user-info">
-                                        <h5 class="blog-user-info-heading">Category</h5>
-                                        <div class="blog-user-dtl"><a href="#" title="Food">Food</a></div>
-                                    </div>
-                                </div>
+
                                 <div class="col-md-6 col-sm-5">
                                     <div class="blog-user-info">
                                         <h5 class="blog-user-info-heading">Tags</h5>
@@ -61,8 +56,12 @@
                         </ul>
                     </div>
                     <div class="topic-btn-block">
-                        <a href="single-blog-with-video.html" class="btn pagi-btn-pre" title="Previous"><i class="fa fa-angle-double-left"></i>Previous</a>
-                        <a href="single-blog-with-audio.html" class="btn pagi-btn-nxt" title="Next">Next<i class="fa fa-angle-double-right"></i></a>
+                        <?php $m_blog = new m_blog();
+                        $read_blog = $m_blog->read_blog_by_id($blogg->id);
+                        $pre = $m_blog->read_blog_by_id($blogg->id-1);
+                        $next = $m_blog->read_blog_by_id($blogg->id+1);?>
+                        <a href="single-blog.php?id=<?php if($pre == '') { echo $blogg->id;} else echo $blogg->id-1;?>" class="btn pagi-btn-pre" title="Previous"><i class="fa fa-angle-double-left"></i>Previous</a>
+                        <a href="single-blog.php?id=<?php if($next =='') { echo $blogg->id;} else echo $blogg->id+1;?>" class="btn pagi-btn-nxt" title="Next">Next<i class="fa fa-angle-double-right"></i></a>
                     </div>
                 </div>
             </div>

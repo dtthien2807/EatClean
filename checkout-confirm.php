@@ -1,5 +1,10 @@
 <?php
+@session_start();
 include ("Controllers/c_checkoutConfirm.php");
-$conf = new c_checkoutConfirm();
-$conf->confirm();
+if(isset($_SESSION['full-name-users'], $_SESSION['cart'])) {
+    $conf = new c_checkoutConfirm();
+    $conf->confirm();
+}
+else
+    header("location:shop.php");
 ?>

@@ -23,6 +23,7 @@
 <script src="Public/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
 <script src="Public/dist/js/pages/chart/chart-page-init.js"></script>
 <script src="Public/assets/libs/chart/Chart.min.js"></script>
+<script src="Public/assets/libs/chart/Chart.bundle.js"></script>
 <!-- Table page js -->
 <script src="Public/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
 <script src="Public/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
@@ -30,6 +31,7 @@
 <script src="Public/assets/libs/quill/dist/quill.min.js"></script>
 <script src="js/caidat.js"></script>
 <script src="js/linegraph.js"></script>
+<script src="js/barchart.js"></script>
 <!-- this page js -->
 <script src="Public/assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
 <script src="Public/assets/libs/magnific-popup/meg.init.js"></script>

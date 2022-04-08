@@ -41,17 +41,10 @@
                             ?>
                             <li class="active"><a href="#">Account</a>
                                 <ul>
-                                    <li class="had-sub"><a href="#">My Account</a>
-                                        <ul>
-                                            <li><a href="myaccount.php">My Account</a></li>
-                                            <li><a href="orderHistory.php">Order History</a></li>
-                                            <li><a href="addressBook.php">Address Book</a></li>
-                                            <li><a href="logOut.php?func=exit">Log out</a></li>
-
-                                        </ul>
-                                    </li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="checkout-confirm.php">Checkout Confirm</a></li>
+                                    <li><a href="myaccount.php">My Account</a></li>
+                                    <li><a href="orderHistory.php">Order History</a></li>
+                                    <li><a href="addressBook.php">Address Book</a></li>
+                                    <li><a href="logOut.php?func=exit">Log out</a></li>
                                 </ul>
                             </li>
                                 <?php

@@ -40,18 +40,25 @@ class c_cart
     }
     public function update()
     {
-        if(isset($_POST['update'])){
-            print_r($_POST);
+
+        foreach ($_POST['qty'] as $productId => $qty) {
+            if ($qty == 0) {
+                unset($_SESSION['cart'][$productId]);
+            } else {
+                $_SESSION['cart'][$productId]['qty'] = $qty;
+            }
         }
+        header("refresh");
+
     }
     public function cart()
     {
         if (isset($_SESSION['cart'])) {
             $product = $_SESSION['cart'];
         }
-       
+
         // echo '<pre>';
-        // print_r($product);
+        // print_r($_SESSION['total_cart']);
         $view_header = "Views/Header/header_account.php";
         $view = "Views/Contents/v_cart.php";
         include "Templates/front-end/layout.php";
