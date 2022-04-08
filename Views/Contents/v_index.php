@@ -12,26 +12,7 @@ include ("Models/m_blog.php");
         </div>
     </div>
 </div>
-<!-- <div class="item home-slider-bg" style="background-image: url('images/slider/slider-02.jpg')">
-  <div class="overlay-bg"></div>
-  <div class="container">
-    <div class="slider-dtl">
-      <h1 class="slider-heading">Best Quality</h1>
-      <h1 class="slider-heading">Organic Food</h1>
-      <h2 class="slider-sub-heading">Live Life Organic</h2>
-    </div>
-  </div>
-</div>
-<div class="item home-slider-bg" style="background-image: url('images/slider/slider-03.jpg')">
-  <div class="overlay-bg"></div>
-  <div class="container">
-    <div class="slider-dtl">
-      <h1 class="slider-heading">Chemical Free</h1>
-      <h1 class="slider-heading">&amp; Virus Free</h1>
-      <h2 class="slider-sub-heading">Eat Organic</h2>
-    </div>
-  </div>
-</div> -->
+
 <!-- </section> -->
 <!--  end slider -->
 <!-- collection -->
@@ -112,11 +93,13 @@ include ("Models/m_blog.php");
                 <div class="btn-filter-wrap">
                     <ul>
                         <li class="btn btn-filter btn-active" data-filter="*"><span>All</span></li>
-                        <li class="btn btn-filter" data-filter=".fruits"><span>Fruits</span></li>
-                        <li class="btn btn-filter" data-filter=".vegetables"><span>Vegetables</span></li>
-                        <li class="btn btn-filter" data-filter=".bread"><span>Bread</span></li>
-                        <li class="btn btn-filter" data-filter=".other"><span>Nuts</span></li>
-                        <li class="btn btn-filter" data-filter=".other"><span>Other</span></li>
+                        <?php
+                        foreach ($read_category as $categories){
+                        ?>
+                        <li class="btn btn-filter" data-filter=".<?php echo $categories->id;?>"><span><?php echo $categories->name_categoryProduct;?></span></li>
+                        <?php
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
@@ -144,7 +127,7 @@ include ("Models/m_blog.php");
                             <div class="shop-products-footer">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <a href="cart.php" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
+                                        <a href="cart.php?cart=cart&id=<?php echo $value->id; ?>" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
                                     </div>
                                     <div class="col-xs-6">
                                         <a href="product-detail.php?id=<?php echo $value->id;?>" title="View Detail"><i class="fa fa-file-text-o"></i> View detail</a>

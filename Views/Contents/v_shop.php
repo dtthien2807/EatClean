@@ -42,9 +42,13 @@
                   <span><i class="fa fa-sort-desc"></i></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li><a href="#">Fruits</a></li>
-                  <li><a href="#">Vegetables</a></li>
-                  <li><a href="#">Drinks</a></li>
+                    <?php
+                    foreach ($read_category as $categories){
+                    ?>
+                  <li><a href="#"><?php echo $categories->name_categoryProduct;?></a></li>
+                    <?php
+                    }
+                    ?>
                 </ul>
               </div>
             </div>
@@ -122,8 +126,8 @@
           </div>
           <div class="col-xs-8 text-center">
             <ul class="pagination">
-              <li><a href="#" title="Pagination">1</a></li>
-              <li class="active"><a href="#" title="Pagination">2</a></li>
+              <li class="active"><a href="#" title="Pagination">1</a></li>
+              <li><a href="#" title="Pagination">2</a></li>
               <li><a href="#" title="Pagination">3</a></li>
               <li><a href="#" title="Pagination">4</a></li>
               <li><a href="#" title="Pagination">5</a></li>

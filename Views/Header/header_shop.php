@@ -1,6 +1,8 @@
 <!--body start-->
 <?php
 @session_start();
+// echo '<pre>';
+// print_r($_SESSION['cart']);
 ?>
 <body>
 <!-- preloader -->
@@ -84,52 +86,31 @@
                 </div>
                 <!-- cart -->
                 <ul class="cart-box">
-                    <li class="cart-content">
-                        <div class="cart-img">
-                            <a href="product-detail.php" title="Pomegranate"><img src="Public/images/shop/product-07.png" alt="Product"></a>
-                        </div>
-                        <div class="cart-dtl">
-                            <h6 class="cart-title"><a href="product-detail.php" title="Pomegranate">Pomegranate</a></h6>
-                            <div class="cart-meta">
-                                <div class="cart-price">Price: $40.00</div>
-                                <div class="cart-qty">Qty: 5</div>
+                    <?php
+                    if(isset($_SESSION['cart'])){
+                        $productCart = $_SESSION['cart'];
+                        foreach($productCart as $k=>$v){
+                            ?>
+                        <li class="cart-content">
+                            <div class="cart-img">
+                                <a href="product-detail.php?id=<?php echo $v['id'];?>" title="<?php echo $v['product']; ?>"><img src="Admin/Public/myImage/<?php echo $v['image'] ?>" alt="Product"></a>
                             </div>
-                            <div class="cart-remove">
-                                <a href="#" title="Remove From Cart"><i class="fa fa-close"></i></a>
+                            <div class="cart-dtl">
+                                <h6 class="cart-title"><a href="product-detail.php?id=<?php echo $v['id'];?>" title="<?php echo $v['product']; ?>"><?php echo $v['product']; ?></a></h6>
+                                <div class="cart-meta">
+                                    <div class="cart-price"><?php echo $v['price']; ?></div>
+                                    <div class="cart-qty">Qty: <?php echo $v['qty']; ?></div>
+                                </div>
+                                <div class="cart-remove">
+                                    <a href="#" title="Remove From Cart"><i class="fa fa-close"></i></a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="cart-content">
-                        <div class="cart-img">
-                            <a href="product-detail.php" title="Lemon"><img src="Public/images/shop/product-05.png" alt="Product"></a>
-                        </div>
-                        <div class="cart-dtl">
-                            <h6 class="cart-title"><a href="product-detail.php" title="Lemon">Lemon</a></h6>
-                            <div class="cart-meta">
-                                <div class="cart-price">Price: $30.00</div>
-                                <div class="cart-qty">Qty: 1</div>
-                            </div>
-                            <div class="cart-remove">
-                                <a href="#" title="Remove From Cart"><i class="fa fa-close"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="cart-content">
-                        <div class="cart-img">
-                            <a href="product-detail.php" title="Berry"><img src="Public/images/shop/product-01.png" alt="Product"></a>
-                        </div>
-                        <div class="cart-dtl">
-                            <h6 class="cart-title"><a href="product-detail.php" title="Berry">Berry</a></h6>
-                            <div class="cart-meta">
-                                <div class="cart-price">Price: $50.00</div>
-                                <div class="cart-qty">Qty: 2</div>
-                            </div>
-                            <div class="cart-remove">
-                                <a href="#" title="Remove From Cart"><i class="fa fa-close"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="cart-subtotal text-right">Total: $330</li>
+                        </li>
+                        <?php
+                        }
+                    }
+                    ?>
+                    <li class="cart-subtotal text-right">Total: <?php if(isset($_SESSION['total_cart'])) echo $_SESSION['total_cart']; else echo "0";?></li>
                     <li class="cart-footer">
                         <div class="row">
                             <div class="col-xs-6">

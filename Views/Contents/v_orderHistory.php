@@ -1,4 +1,7 @@
 <!-- page banner -->
+<?php
+@session_start();
+?>
 <section id="page-banner" class="page-banner" style="background-image: url('Public/images/bg/page-banner.jpg');">
     <div class="container">
         <div class="banner-dtl">
@@ -27,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h5 class="customer-name">John Doe</h5>
+                                <h5 class="customer-name"><?php echo $_SESSION['full-name-users']?></h5>
                                 <div class="ac-status">Premium Account</div>
                             </div>
                         </div>
@@ -53,42 +56,28 @@
                             <th>Quantity</th>
                             <th>Order Status</th>
                         </tr>
-                        <tr>
-                            <td><a href="product-detail.php" title="Pomegranate"><img src="Public/images/shop/product-07.png" class="img-responsive" alt="Pomegranate"></a>
-                            <td><a href="product-detail.php" class="order-pdt-name" title="Pomegranate">Pomegranate</a></td>
-                            <td>OS-14777</td>
-                            <td>20-06-2017</td>
-                            <td>$15.59</td>
-                            <td>2</td>
-                            <td>
-                                <div class="order-status">Shipped on 21-06-2017</div>
-                                <a href="#" class="btn btn-default" title="Track Now"><i class="fa fa-rocket"></i> Track Now</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="product-detail.php" title="Green Cabbage"><img src="Public/images/shop/product-08.png" class="img-responsive" alt="Green Cabbage"></a></td>
-                            <td><a href="product-detail.php" class="order-pdt-name" title="Green Cabbage">Green Cabbage</a></td>
-                            <td>OS-14779</td>
-                            <td>20-06-2017</td>
-                            <td>$10.00</td>
-                            <td>1</td>
-                            <td>
-                                <div class="order-status">Shipped on 21-06-2017</div>
-                                <a href="#" class="btn btn-default" title="Track Now"><i class="fa fa-rocket"></i> Track Now</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="product-detail.php" title="Pineapple"><img src="Public/images/shop/product-11.png" class="img-responsive" alt="Pineapple"></a></td>
-                            <td><a href="product-detail.php" class="order-pdt-name" title="Pineapple">Pineapple</a></td>
-                            <td>OS-14785</td>
-                            <td>20-06-2017</td>
-                            <td>$12.74</td>
-                            <td>4</td>
-                            <td>
-                                <div class="order-status">Shipped on 21-06-2017</div>
-                                <a href="#" class="btn btn-default" title="Track Now"><i class="fa fa-rocket"></i> Track Now</a>
-                            </td>
-                        </tr>
+                        <?php
+                        foreach ($read_order_by_user as $value){
+                            $detail = $m_order->read_detail_by_order($value->id);
+                            foreach ($detail as $item){
+                                $product = $m_shop->read_shop_by_id($item->id_product);
+                                ?>
+                                <tr>
+                                    <td><a href="product-detail.php?id=<?php echo $product->id; ?>" title="<?php echo $product->product;?>"><img src="Admin/Public/myImage/<?php echo $product->image; ?>" class="img-responsive" alt="<?php echo $product->product;?>"></a>
+                                    <td><a href="product-detail.php?id=<?php echo $product->id; ?>" class="order-pdt-name" title="<?php echo $product->product;?>"><?php echo $product->product;?></a></td>
+                                    <td><?php echo $value->id;?></td>
+                                    <td><?php echo $value->date_order;?></td>
+                                    <td><?php echo $value->total_price;?></td>
+                                    <td><?php echo $item->amount;?></td>
+                                    <td>
+                                        <div class="order-status">Shipped on 01-05-2022</div>
+                                        <a href="#" class="btn btn-default" title="Track Now"><i class="fa fa-rocket"></i> Track Now</a>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                        }
+                        ?>
                     </table>
                 </div>
             </div>

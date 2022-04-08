@@ -28,6 +28,18 @@ class m_order_user extends database{
         $this->setQuery($sql);
         return $this->execute(array($id,$id_order,$id_product,$amount,$price));
     }
+    public function read_order_by_id_user($id_user)
+    {
+        $sql = "select * from tbl_order where id_user=?";
+        $this->setQuery($sql);
+        return $this->loadAllRows(array($id_user));
+    }
+    public function read_detail_by_order($id_order)
+    {
+        $sql = "select * from tbl_detailorder where id_order=?";
+        $this->setQuery($sql);
+        return $this->loadAllRows(array($id_order));
+    }
 
 }
 ?>

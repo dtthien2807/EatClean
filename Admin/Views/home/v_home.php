@@ -77,15 +77,17 @@
                                     <div class="col-6 m-t-15">
                                         <div class="bg-dark p-10 text-white text-center">
                                             <i class="fa fa-table m-b-5 font-16"></i>
-                                            <h5 class="m-b-0 m-t-5">0</h5>
-                                            <small class="font-light">Pending Orders</small>
+                                            <h5 class="m-b-0 m-t-5"><?php $sum= $tong_tien->tongtien ;
+                                                echo number_format($sum);?></h5>
+                                            <small class="font-light">Total Bills</small>
                                         </div>
                                     </div>
                                     <div class="col-6 m-t-15">
                                         <div class="bg-dark p-10 text-white text-center">
                                             <i class="fa fa-globe m-b-5 font-16"></i>
                                             <h5 class="m-b-0 m-t-5"><?php
-                                                echo $count_online->soluong_online;?></h5>
+                                                echo $count_online->soluong_online;
+                                                ?></h5>
                                             <small class="font-light">Online</small>
                                         </div>
                                     </div>

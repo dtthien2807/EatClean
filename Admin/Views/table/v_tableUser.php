@@ -75,7 +75,7 @@
                                 </td>
                                 <?php if($user->status==0){ ?>
                                 <td>
-                                    <a class="btn bg-danger " href="javascript:question_confirm_User(<?php echo $user->id;?>)" title="delete">
+                                    <a class="btn bg-danger" href="javascript:question_confirm_User(<?php echo $user->id;?>)" title="delete">
                                         <i class=" fas fa-trash" ></i>
                                     </a>
                                 </td>

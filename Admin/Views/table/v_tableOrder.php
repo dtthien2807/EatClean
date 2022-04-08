@@ -37,6 +37,7 @@ include ("Models/m_user.php");
                                 <th>Note</th>
                                 <th>Total Price</th>
                                 <th>Status</th>
+                                <th>Confirm</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,7 +47,7 @@ include ("Models/m_user.php");
                             foreach ($listOrder as $key => $order) {
                                 ?>
                                 <tr data-widget="expandable-table" aria-expanded="false">
-                                    <td><?php echo $order->id; ?></td>
+                                    <td><a href="detail-order.php?id_order=<?php echo $order->id;?>" ><?php echo $order->id; ?></a></td>
                                     <td><?php $od = $m_user->read_user_by_id($order->id_user);
                                         echo $od->name;
                                         ?></td>
@@ -63,14 +64,21 @@ include ("Models/m_user.php");
                                         }
 
                                         ?>
-                                         float-right"><?php if($order->status==0)
+                                         float-right"><?php if($order->status==1)
                                             {
-                                                echo "Active";
+                                                echo "Chưa thanh toán";
                                             }
                                             else
                                             {
-                                                echo "inactive";
+                                                echo "Đã thanh toán";
                                             }?></span>
+                                    </td>
+                                    <td>
+                                        <?php if($order->status==1){ ?>
+                                        <a class="btn bg-danger" href="javascript:question_confirm_payment(<?php echo $order->id;?>)" title="Confirm payment">
+                                            <i class="fas fa-check" ></i>
+                                        </a>
+                                        <?php } ?>
                                     </td>
 
                                 </tr>

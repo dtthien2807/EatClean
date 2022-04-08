@@ -12,6 +12,7 @@ class c_home{
         $count_product = $m_product->count_product();
         $m_order = new m_order();
         $count_order = $m_order->count_order();
+        $tong_tien = $m_order->read_sum();
 
         $m_active = new m_active();
         $active_sessions = 0;

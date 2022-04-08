@@ -11,6 +11,7 @@ define("DB_PWD","");
 //define("DB_NAME","PHP0921E_Nhom7");
 //define("DB_USER","PHP0921E_Nhom7");
 //define("DB_PWD","3xwK5In7nx");
+
 //get connection
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PWD, DB_NAME);
 
@@ -19,7 +20,7 @@ if(!$mysqli){
 }
 
 //query to get data from the table
-$query = sprintf("SELECT count(ip) as soluongip, date_in FROM active_sessions GROUP BY date_in");
+$query = sprintf("SELECT sum(total_price) as tongtien, date_order FROM tbl_order GROUP BY date_order");
 
 //execute query
 $result = $mysqli->query($query);
@@ -28,8 +29,8 @@ $result = $mysqli->query($query);
 $data = array();
 foreach ($result as $row) {
     $data[] = array(
-        'date_in'		=>	$row["date_in"],
-        'soluongip'			=>	$row["soluongip"],
+        'date_order'		=>	$row["date_order"],
+        'tongtien'			=>	$row["tongtien"],
         'color'			=>	'#' . rand(100000, 999999) . ''
     );
 }

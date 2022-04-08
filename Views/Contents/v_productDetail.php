@@ -104,7 +104,7 @@
                                         </div>
                                         <div class="cart-btn-block">
                                             <div class="add-cart-btn-two">
-                                                <a href="#" class="btn btn-default" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
+                                                <a href="cart.php?cart=cart&id=<?php echo $detail_product->id; ?>" class="btn btn-default" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
                                             </div>
                                         </div>
                                     </div>
@@ -258,7 +258,7 @@
                         <div class="shop-products-footer">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <a href="cart.php" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
+                                    <a href="cart.php?cart=cart&id=<?php echo $value->id; ?>" title="Add To Cart"><i class="fa fa-shopping-basket"></i> Add to cart</a>
                                 </div>
                                 <div class="col-xs-6">
                                     <a href="product-detail.php?id=<?php echo $value->id;?>" title="View Detail"><i class="fa fa-file-text-o"></i> View detail</a>

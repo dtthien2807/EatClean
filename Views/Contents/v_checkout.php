@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <form id="checkout-form" class="checkout-form" action="#" method="POST">
+                <form id="checkout-form" class="checkout-form" action="" method="POST">
                     <h4 class="checkout-page-heading">Delivery Address</h4>
                     <div class="form-group">
                         <label>Full Name</label>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="checkout-btn">
-                        <button type="submit" class="btn btn-default" name="add-user-order">Save Address</button>
+                        <button type="submit" class="btn btn-default" name="add-user-order">Đặt hàng</button>
                         <a href="cart.php" class="cancel-text" title="Cancel">Cancel</a>
                     </div>
                 </form>
@@ -101,32 +101,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="payment">
-                    <form id="payment" action="#">
-                        <div class="form-group">
-                            <input type="radio" name="payment" value="Direct Bank Transfer" checked>
-                            <label>Direct Bank Transfer</label>
-                            <p>Your order won’t be shipped until the funds have cleared in our account</p>
-                        </div>
-                        <div class="form-group">
-                            <input type="radio" name="payment" value="Cheque Payment">
-                            <label>Cheque Payment</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="radio" name="payment" value="Credit Card">
-                            <label>Credit Card</label>
-                            <img src="Public/images/shop/credit-cards.jpg" class="img-responsive" alt="credit-card">
-                        </div>
-                        <div class="form-group">
-                            <input type="radio" name="payment" value="paypal">
-                            <label>Paypal</label>
-                        </div>
-                        <div class="checkout-btn">
-                            <button type="submit" class="btn btn-default">Pay Now</button>
-                            <a href="#" class="cancel-text" title="Cancel">Cancel</a>
-                        </div>
-                    </form>
-                </div>
+
             </div>
         </div>
     </div>

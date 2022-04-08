@@ -1,6 +1,5 @@
 <?php
 @session_start();
-error_reporting(E_ERROR | E_PARSE);
 include ("Models/m_order_user.php");
 class c_checkout{
     public function __construct()
@@ -37,7 +36,8 @@ class c_checkout{
                 $date_order = date('Y-m-d', time());
                 $note = "ghi nhớ";
                 $total_price = $_SESSION['total_cart'];
-                $id_order = $m_order->add_order($id_o,$id_user, $date_order,$note,$status,$total_price);
+                $status_order = 1;
+                $id_order = $m_order->add_order($id_o,$id_user, $date_order,$note,$status_order,$total_price);
                 if($id_order>0)
                 {
                     $id_detail= NULL;
@@ -57,6 +57,7 @@ class c_checkout{
                 }
             }
         }
+        $view_header = "Views/Header/header_index.php";
         $view = "Views/Contents/v_checkout.php";
         include ("Templates/front-end/layout.php");
     }

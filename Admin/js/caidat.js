@@ -40,3 +40,10 @@ function question_confirm_Promotion(id)
         window.location='deletePromotion.php?id=' + id
     }
 }
+function question_confirm_payment(id)
+{
+    if(confirm("Xác nhận đã thanh toán hóa đơn này?"))
+    {
+        window.location='confirm-payment.php?id=' + id
+    }
+}

@@ -1,6 +1,5 @@
 <?php
 @session_start();
-error_reporting(E_ERROR | E_PARSE);
 include ("Models/m_order_user.php");
 class c_checkoutConfirm{
     public function confirm(){
@@ -11,7 +10,7 @@ class c_checkoutConfirm{
         $date_order = date('Y-m-d', time());
         $note = "ghi nhớ";
         $total_price = $_SESSION['total_cart'];
-        $status = 0;
+        $status = 1;
         $m_order = new m_order_user();
         $id_order = $m_order->add_order($id_or,$id_user, $date_order,$note,$status,$total_price);
         if($id_order>0)

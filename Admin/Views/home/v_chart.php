@@ -25,7 +25,7 @@
         <!-- Sales chart -->
         <!-- ============================================================== -->
         <div class="row">
-            <div class="chart-container pie-chart" style="width: 640px; height: auto;">
+            <div class="chart-container pie-chart" style="width: 800px; height: auto;">
                 <canvas id="bar_chart"></canvas>
             </div>
         </div>

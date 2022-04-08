@@ -1,29 +1,29 @@
 $(document).ready(function(){
     $.ajax({
-        url : "Models/m_data_onl.php",
+        url : "Models/m_chart_order.php",
         type : "GET",
         data:{action:'fetch'},
         dataType:"JSON",
         success : function(data) {
             console.log(data);
 
-            var soluongip = [];
-            var date_in = [];
+            var tongtien = [];
+            var date_order = [];
             var color = [];
 
             for (var i in data) {
-                date_in.push(data[i].date_in);
-                soluongip.push(data[i].soluongip);
+                date_order.push(data[i].date_order);
+                tongtien.push(data[i].tongtien);
                 color.push(data[i].color);
             }
-            var chart_data = {
-                labels: date_in,
+            var chart_datas = {
+                labels: date_order,
                 datasets: [
                     {
-                        label: "Số người truy cập website",
+                        label: "Doanh số",
                         backgroundColor: color,
                         color: '#fff',
-                        data: soluongip
+                        data: tongtien
                     }
                 ]
             };
@@ -41,7 +41,7 @@ $(document).ready(function(){
 
             var graph3 = new Chart(group_chart3, {
                 type:'bar',
-                data:chart_data,
+                data:chart_datas,
                 options:options
             });
         },
