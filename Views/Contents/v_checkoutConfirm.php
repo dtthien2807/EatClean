@@ -22,7 +22,7 @@ $info_user = $_SESSION['info-users'];
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <div class="checkout-address">
+                <form id="checkout-confirm-form" class="checkout-confirm-form" action="#" method="POST">
                     <h4 class="checkout-page-heading">Delivery Address</h4>
                     <div class="form-group">
                         <label>Full Name</label>
@@ -30,36 +30,39 @@ $info_user = $_SESSION['info-users'];
                     </div>
                     <div class="form-group">
                         <label>Address</label>
-                        <input type="text" class="form-control" id="address" name="address" value="<?php  echo $info_user->adress; ?>">
+                        <input type="text" class="form-control" id="address" name="address" value="<?php echo $info_user->adress; ?>">
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Identity Card</label>
-                                <input type="text" class="form-control" id="city" name="cmnd" value="<?php echo $info_user->identity_card;?>">
+                                <input type="text" class="form-control" id="city" name="cmnd" value="<?php echo $info_user->identity_card; ?>">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Birthday</label>
-                                <input type="date" class="form-control" id="state" name="birthday" value="<?php echo $info_user->date;?>">
+                                <input type="date" class="form-control" id="state" name="birthday" value="<?php echo $info_user->date; ?>">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="text" class="form-control" id="phone" name="number-phone" value="<?php echo $info_user->numberphone;?>">
+                                <input type="text" class="form-control" id="phone" name="number-phone" value="<?php echo $info_user->numberphone; ?>">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control" id="email" name="email" value="<?php echo $info_user->email;?>">
+                                <input type="email" class="form-control" id="email" name="email" value="<?php echo $info_user->email; ?>">
                             </div>
                         </div>
                     </div>
-                    <div class="add-address-text"><a href="#" title="Add New Address">Add a new address</a></div>
-                </div>
+                    <div class="checkout-btn">
+                        <button type="submit" class="btn btn-default" name="add-order">Order</button>
+                        <a href="cart.php" class="cancel-text" title="Cancel">Cancel</a>
+                    </div>
+                </form>
             </div>
             <div class="col-sm-6">
                 <div class="order-block">
@@ -122,7 +125,7 @@ $info_user = $_SESSION['info-users'];
                             <label>Paypal</label>
                         </div>
                         <div class="checkout-btn">
-                            <button type="submit" class="btn btn-default" name="add-order">Pay Now</button>
+                            <button type="button" class="btn btn-default">Pay Now</button>
                             <a href="#" class="cancel-text" title="Cancel">cancel</a>
                         </div>
                     </form>

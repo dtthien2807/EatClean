@@ -25,5 +25,6 @@ class m_user extends database{
         $this->setQuery($sql);
         return $this->loadRow();
     }
+
 }
 ?>

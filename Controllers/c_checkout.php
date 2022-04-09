@@ -1,5 +1,6 @@
 <?php
 @session_start();
+error_reporting(E_ERROR | E_PARSE);
 include ("Models/m_order_user.php");
 class c_checkout{
     public function __construct()
@@ -12,9 +13,6 @@ class c_checkout{
 //       print_r($product);
 
     //   print_r($_SESSION['total_cart']);
-        if (isset($_SESSION['cart'])) {
-            $product = $_SESSION['cart'];
-        }
         if(isset($_POST['add-user-order']))
         {
             $id_u=null;
@@ -25,7 +23,7 @@ class c_checkout{
             $numberphone = $_POST['number-phone'];
             $adress = $_POST['address'];
             $sex = 1;
-            $date_create = date('Y-m-d', time());
+            $date_create = date('Y-m-d');
             $status = 0;
             $pass_word = null;
             $m_order = new m_order_user();
@@ -48,9 +46,7 @@ class c_checkout{
                            $kq = $m_order->add_detail_order($id_detail, $id_order, $idProduct, $qty, $price);
                     }
                     if($kq != 0){
-                        echo '<script language="javascript">';
-                        echo 'alert("Ban da dat hang thanh cong")';
-                        echo '</script>';
+                        echo "<script>alert('Ban da dat hang thanh cong!');window.location='index.php'</script>";
                         unset($_SESSION['cart']);
                         unset($_SESSION['total_cart']);
                     }

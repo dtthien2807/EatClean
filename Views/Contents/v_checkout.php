@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <form id="checkout-form" class="checkout-form" action="" method="POST">
+                <form id="checkout-form" class="checkout-form" action="#" method="POST">
                     <h4 class="checkout-page-heading">Delivery Address</h4>
                     <div class="form-group">
                         <label>Full Name</label>

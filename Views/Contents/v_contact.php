@@ -45,7 +45,7 @@
                 <div class="col-md-8">
                     <div class="contact-us-form">
                         <h3 class="contact-message-heading">Send us a Message</h3>
-                        <form id="contact-form" action="" method="POST">
+                        <form id="contact-form" action="#" method="POST">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">

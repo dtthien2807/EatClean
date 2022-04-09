@@ -144,7 +144,7 @@ Author: Media City
     <div class="container">
         <h3 class="register-page-heading text-center">Login Now</h3>
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <form id="login-form" method="POST" action="actionUser.php" class="register-form">
+            <form id="login-form" class="register-form" action="actionUser.php" method="POST">
                 <h5 class="register-heading text-center">Proceed To Login</h5>
                 <div class="form-group">
                     <input type="text" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
@@ -163,14 +163,6 @@ Author: Media City
                         <div class="col-xs-6 text-right">
                             <a href="register.php" title="Register With Us">Register With Us</a>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <a href="#" title="Login With Facebook" class="btn social-login fb-login"><i class="fa fa-facebook fa-lg"></i>Login with facebook</a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="#" title="Login With Google" class="btn social-login google-login"><i class="fa fa-google-plus fa-lg"></i>login with google</a>
                     </div>
                 </div>
             </form>

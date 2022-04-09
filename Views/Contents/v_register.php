@@ -20,7 +20,7 @@
         <h3 class="register-page-heading text-center">Register Now</h3>
         <div class="row">
             <div class="col-sm-6">
-                <form id="register-form" method="POST" action="#" class="register-form">
+                <form id="register-form" class="register-form" action="" method="POST">
                     <h5 class="register-heading text-center">Proceed To Signup Now</h5>
                     <?php
                     include_once 'Views/error.php';
@@ -62,14 +62,6 @@
                     <button type="submit" class="btn btn-default" name="btn-register-user">Register</button>
                     <div class="login-text">
                         <a href="login.php" title="Login Now">Already have an account? Login Now</a>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="#" title="Register With Facebook" class="btn social-login fb-login"><i class="fa fa-facebook fa-lg"></i>register with facebook</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="#" title="Register With Google" class="btn social-login google-login"><i class="fa fa-google-plus fa-lg"></i>register with google</a>
-                        </div>
                     </div>
                 </form>
             </div>
